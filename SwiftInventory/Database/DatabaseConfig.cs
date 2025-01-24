@@ -15,7 +15,7 @@ namespace SwiftInventory.Database
 
 #if DEBUG
             var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            dataDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\Database"));
+            dataDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Data"));
 #else
             // This part is incomplete, it's not necessary currently
             dataDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SwiftInventory");

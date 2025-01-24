@@ -363,4 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Exception: do not ignore
-!SwiftInventory/Database/SwiftInventoryDB.mdf
+!Data/SwiftInventoryDB.mdf

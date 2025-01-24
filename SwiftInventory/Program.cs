@@ -13,16 +13,8 @@ namespace SwiftInventory
         [STAThread]
         static void Main()
         {
-            //var executablePath = AppDomain.CurrentDomain.BaseDirectory;
-            //var projectPath = Directory.GetParent(executablePath)?.Parent?.Parent?.Parent?.FullName;
-
-            //if (projectPath != null)
-            //{
-            //    AppDomain.CurrentDomain.SetData("DataDirectory", projectPath);
-            //}
-
+            // Test code
             bool connected = DatabaseConfig.IsConnected();
-
             MessageBox.Show(connected ? "Connected" : "Not connected");
 
             Application.EnableVisualStyles();
