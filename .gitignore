@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Exception: do not ignore
+!SwiftInventory/Database/SwiftInventoryDB.mdf
