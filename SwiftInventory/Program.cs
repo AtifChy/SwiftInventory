@@ -13,8 +13,8 @@ namespace SwiftInventory
         [STAThread]
         static void Main()
         {
-            // Test code
-            bool connected = DatabaseConfig.IsConnected();
+            // Test code to check if the database is connected
+            var connected = DatabaseConfig.IsConnected();
             MessageBox.Show(connected ? "Connected" : "Not connected");
 
             Application.EnableVisualStyles();

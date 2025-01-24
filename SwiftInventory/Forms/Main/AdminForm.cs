@@ -31,46 +31,39 @@ namespace SwiftInventory.Forms.Main
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
-            HeaderLabel.Text = "Dashboard";
+            HeaderLabel.Text = @"Dashboard";
             OpenChildForm(new DashboardForm());
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            HeaderLabel.Text = "Category";
+            HeaderLabel.Text = @"Category";
             OpenChildForm(new CategoryForm());
         }
 
         private void ProductButton_Click(object sender, EventArgs e)
         {
-            HeaderLabel.Text = "Product";
+            HeaderLabel.Text = @"Product";
         }
 
         private void CustomerButton_Click(object sender, EventArgs e)
         {
-            HeaderLabel.Text = "Customer";
+            HeaderLabel.Text = @"Customer";
         }
 
         private void SupplierButton_Click(object sender, EventArgs e)
         {
-            HeaderLabel.Text = "Supplier";
+            HeaderLabel.Text = @"Supplier";
         }
 
         private void SalesButton_Click(object sender, EventArgs e)
         {
-            HeaderLabel.Text = "Sales";
+            HeaderLabel.Text = @"Sales";
         }
 
         private void MenuPanelVisibleChanged(object sender, EventArgs e)
         {
-            if (MenuPanel.Visible)
-            {
-                MainTable.ColumnStyles[0].Width = 300F;
-            }
-            else
-            {
-                MainTable.ColumnStyles[0].Width = 0F;
-            }
+            MainTable.ColumnStyles[0].Width = MenuPanel.Visible ? 300F : 0F;
 
             MainTable.PerformLayout();
         }
