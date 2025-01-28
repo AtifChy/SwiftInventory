@@ -89,6 +89,7 @@ namespace SwiftInventory.Forms.Main
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(300, 722);
             this.MenuPanel.TabIndex = 0;
+            this.MenuPanel.VisibleChanged += new System.EventHandler(this.MenuPanel_VisibleChanged);
             // 
             // SalesButton
             // 
@@ -112,6 +113,7 @@ namespace SwiftInventory.Forms.Main
             this.SalesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SalesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SalesButton.UseVisualStyleBackColor = false;
+            this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
             // 
             // SupplierButton
             // 
@@ -135,6 +137,7 @@ namespace SwiftInventory.Forms.Main
             this.SupplierButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SupplierButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SupplierButton.UseVisualStyleBackColor = false;
+            this.SupplierButton.Click += new System.EventHandler(this.SupplierButton_Click);
             // 
             // CustomerButton
             // 
@@ -158,6 +161,7 @@ namespace SwiftInventory.Forms.Main
             this.CustomerButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CustomerButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CustomerButton.UseVisualStyleBackColor = false;
+            this.CustomerButton.Click += new System.EventHandler(this.CustomerButton_Click);
             // 
             // ProductButton
             // 
@@ -181,6 +185,7 @@ namespace SwiftInventory.Forms.Main
             this.ProductButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProductButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ProductButton.UseVisualStyleBackColor = false;
+            this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // CategoryButton
             // 
@@ -204,6 +209,7 @@ namespace SwiftInventory.Forms.Main
             this.CategoryButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CategoryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CategoryButton.UseVisualStyleBackColor = false;
+            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
             // 
             // DashboardButton
             // 
@@ -227,6 +233,7 @@ namespace SwiftInventory.Forms.Main
             this.DashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DashboardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardButton.UseVisualStyleBackColor = false;
+            this.DashboardButton.Click += new System.EventHandler(this.DashboardButton_Click);
             // 
             // UserPicturePanel
             // 
@@ -319,6 +326,7 @@ namespace SwiftInventory.Forms.Main
             this.MenuButton.Size = new System.Drawing.Size(52, 65);
             this.MenuButton.TabIndex = 0;
             this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // AdminForm
             // 

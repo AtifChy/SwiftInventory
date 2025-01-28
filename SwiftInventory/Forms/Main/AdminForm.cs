@@ -61,16 +61,16 @@ namespace SwiftInventory.Forms.Main
             HeaderLabel.Text = @"Sales";
         }
 
-        private void MenuPanelVisibleChanged(object sender, EventArgs e)
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            MenuPanel.Visible = !MenuPanel.Visible;
+        }
+
+        private void MenuPanel_VisibleChanged(object sender, EventArgs e)
         {
             MainTable.ColumnStyles[0].Width = MenuPanel.Visible ? 300F : 0F;
 
             MainTable.PerformLayout();
-        }
-
-        private void MenuButton_Click(object sender, EventArgs e)
-        {
-            MenuPanel.Visible = !MenuPanel.Visible;
         }
     }
 }
