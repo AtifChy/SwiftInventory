@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SwiftInventory.Database;
+using System;
 using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
@@ -15,6 +9,26 @@ namespace SwiftInventory.Forms.Main
         public CategoryForm()
         {
             InitializeComponent();
+        }
+
+        private void AddCategoryButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(AddCategoryText.Text))
+            {
+                CategoryQueries.AddCategory(AddCategoryText.Text);
+                CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+                AddCategoryText.Text = string.Empty;
+                MessageBox.Show(@"Category added successfully.");
+            }
+            else
+            {
+                MessageBox.Show(@"Category name cannot be empty.");
+            }
+        }
+
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+            CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
         }
     }
 }
