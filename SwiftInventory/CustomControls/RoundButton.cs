@@ -7,7 +7,7 @@ namespace SwiftInventory.CustomControls
 {
     public sealed class RoundButton : Button
     {
-        private int _borderSize = 0;
+        private int _borderSize;
         private int _borderRadius = 20;
         private Color _borderColor = Color.PaleVioletRed;
 
@@ -17,7 +17,7 @@ namespace SwiftInventory.CustomControls
             set
             {
                 _borderSize = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -27,7 +27,7 @@ namespace SwiftInventory.CustomControls
             set
             {
                 _borderRadius = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -37,7 +37,7 @@ namespace SwiftInventory.CustomControls
             set
             {
                 _borderColor = value;
-                this.Invalidate();
+                Invalidate();
             }
         }
 
@@ -81,7 +81,7 @@ namespace SwiftInventory.CustomControls
                 using (var penBorder = new Pen(BorderColor, BorderSize))
                 {
                     penBorder.Alignment = PenAlignment.Inset;
-                    this.Region = new Region(pathSurface);
+                    Region = new Region(pathSurface);
                     e.Graphics.DrawPath(penSurface, pathSurface);
 
                     if (BorderSize >= 1)
@@ -92,7 +92,7 @@ namespace SwiftInventory.CustomControls
             }
             else
             {
-                this.Region = new Region(rectSurface);
+                Region = new Region(rectSurface);
                 if (BorderSize >= 1)
                 {
                     using (var penBorder = new Pen(BorderColor, BorderSize))
@@ -105,15 +105,15 @@ namespace SwiftInventory.CustomControls
             }
         }
 
-        protected override void OnHandleCreated(System.EventArgs e)
+        protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+            Parent.BackColorChanged += Container_BackColorChanged;
         }
 
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
-            if (this.DesignMode) this.Invalidate();
+            if (DesignMode) Invalidate();
         }
     }
 }

@@ -356,16 +356,16 @@ namespace SwiftInventory.Forms.Main
         private Panel UserPicturePanel;
         private PictureBox UserPictureBox;
         private FontAwesome.Sharp.IconButton DashboardButton;
-        private FontAwesome.Sharp.IconButton CustomerButton;
-        private FontAwesome.Sharp.IconButton ProductButton;
         private FontAwesome.Sharp.IconButton CategoryButton;
-        private FontAwesome.Sharp.IconButton SalesButton;
-        private FontAwesome.Sharp.IconButton SupplierButton;
         private Label UserLabel;
         private Panel MainPanel;
         private Panel ChildFormPanel;
         private Panel HeaderPanel;
         private Label HeaderLabel;
         private FontAwesome.Sharp.IconButton MenuButton;
+        private FontAwesome.Sharp.IconButton SalesButton;
+        private FontAwesome.Sharp.IconButton SupplierButton;
+        private FontAwesome.Sharp.IconButton CustomerButton;
+        private FontAwesome.Sharp.IconButton ProductButton;
     }
 }
