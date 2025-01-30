@@ -133,15 +133,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SwiftInventoryDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SwiftInventoryDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SwiftInventoryDB.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-account-94.png" />
   </ItemGroup>
   <ItemGroup>
