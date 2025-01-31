@@ -10,7 +10,7 @@ namespace SwiftInventory.Forms.Main
         public AdminForm()
         {
             InitializeComponent();
-            OpenChildForm(new DashboardForm());
+            //OpenChildForm(new DashboardForm());
         }
 
         private void OpenChildForm(Form childForm)
@@ -32,7 +32,7 @@ namespace SwiftInventory.Forms.Main
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Dashboard";
-            OpenChildForm(new DashboardForm());
+            //OpenChildForm(new DashboardForm());
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
@@ -44,6 +44,7 @@ namespace SwiftInventory.Forms.Main
         private void ProductButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Product";
+            OpenChildForm(new ProductForm());        
         }
 
         private void CustomerButton_Click(object sender, EventArgs e)
@@ -54,11 +55,13 @@ namespace SwiftInventory.Forms.Main
         private void SupplierButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Supplier";
+            OpenChildForm(new SupplierForm());
         }
 
         private void SalesButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Sales";
+            OpenChildForm(new SalesForm());
         }
 
         private void MenuButton_Click(object sender, EventArgs e)

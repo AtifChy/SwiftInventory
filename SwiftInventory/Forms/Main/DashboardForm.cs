@@ -16,5 +16,15 @@ namespace SwiftInventory.Forms.Main
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DashboardForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

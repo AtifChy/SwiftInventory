@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.CategoryDataGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.roundButton2 = new SwiftInventory.CustomControls.RoundButton();
             this.roundButton1 = new SwiftInventory.CustomControls.RoundButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ManageCategoryLabel = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.AddNewCategoryLabel = new System.Windows.Forms.Label();
             this.AddCategoryButton = new SwiftInventory.CustomControls.RoundButton();
             this.AddCategoryText = new System.Windows.Forms.TextBox();
+            this.roundButton2 = new SwiftInventory.CustomControls.RoundButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -66,6 +66,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(20);
             this.panel1.Size = new System.Drawing.Size(846, 703);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel4
             // 
@@ -79,6 +80,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(806, 460);
             this.panel4.TabIndex = 4;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel7
             // 
@@ -88,25 +90,26 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(804, 344);
             this.panel7.TabIndex = 3;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // CategoryDataGridView
             // 
             this.CategoryDataGridView.AllowUserToAddRows = false;
             this.CategoryDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.CategoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CategoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.CategoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CategoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
             this.CategoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CategoryDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.CategoryDataGridView.ColumnHeadersHeight = 40;
             this.CategoryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CategoryDataGridView.EnableHeadersVisualStyles = false;
@@ -115,22 +118,23 @@
             this.CategoryDataGridView.Name = "CategoryDataGridView";
             this.CategoryDataGridView.ReadOnly = true;
             this.CategoryDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.CategoryDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.CategoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.CategoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.CategoryDataGridView.RowTemplate.Height = 35;
             this.CategoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CategoryDataGridView.Size = new System.Drawing.Size(804, 344);
             this.CategoryDataGridView.TabIndex = 0;
+            this.CategoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoryDataGridView_CellContentClick);
             // 
             // panel6
             // 
@@ -141,24 +145,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(804, 58);
             this.panel6.TabIndex = 2;
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundButton2.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.roundButton2.BorderRadius = 5;
-            this.roundButton2.BorderSize = 0;
-            this.roundButton2.FlatAppearance.BorderSize = 0;
-            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.roundButton2.ForeColor = System.Drawing.Color.Black;
-            this.roundButton2.Location = new System.Drawing.Point(651, 8);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(130, 40);
-            this.roundButton2.TabIndex = 1;
-            this.roundButton2.Text = "Delete";
-            this.roundButton2.UseVisualStyleBackColor = false;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // roundButton1
             // 
@@ -176,6 +163,7 @@
             this.roundButton1.TabIndex = 0;
             this.roundButton1.Text = "Edit";
             this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // panel5
             // 
@@ -185,6 +173,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(804, 56);
             this.panel5.TabIndex = 1;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // ManageCategoryLabel
             // 
@@ -195,6 +184,7 @@
             this.ManageCategoryLabel.Size = new System.Drawing.Size(208, 32);
             this.ManageCategoryLabel.TabIndex = 1;
             this.ManageCategoryLabel.Text = "Manage Category";
+            this.ManageCategoryLabel.Click += new System.EventHandler(this.ManageCategoryLabel_Click);
             // 
             // panel2
             // 
@@ -203,6 +193,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(806, 20);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -217,6 +208,7 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(20);
             this.panel3.Size = new System.Drawing.Size(806, 183);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // AddNewCategoryLabel
             // 
@@ -227,6 +219,7 @@
             this.AddNewCategoryLabel.Size = new System.Drawing.Size(220, 32);
             this.AddNewCategoryLabel.TabIndex = 0;
             this.AddNewCategoryLabel.Text = "Add New Category";
+            this.AddNewCategoryLabel.Click += new System.EventHandler(this.AddNewCategoryLabel_Click);
             // 
             // AddCategoryButton
             // 
@@ -258,6 +251,26 @@
             this.AddCategoryText.Name = "AddCategoryText";
             this.AddCategoryText.Size = new System.Drawing.Size(758, 43);
             this.AddCategoryText.TabIndex = 1;
+            this.AddCategoryText.TextChanged += new System.EventHandler(this.AddCategoryText_TextChanged);
+            // 
+            // roundButton2
+            // 
+            this.roundButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundButton2.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.roundButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.roundButton2.BorderRadius = 5;
+            this.roundButton2.BorderSize = 0;
+            this.roundButton2.FlatAppearance.BorderSize = 0;
+            this.roundButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.roundButton2.ForeColor = System.Drawing.Color.Black;
+            this.roundButton2.Location = new System.Drawing.Point(651, 8);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(130, 40);
+            this.roundButton2.TabIndex = 1;
+            this.roundButton2.Text = "Delete";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
             // CategoryForm
             // 
@@ -299,7 +312,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
-        private CustomControls.RoundButton roundButton2;
         private CustomControls.RoundButton roundButton1;
+        private CustomControls.RoundButton roundButton2;
     }
 }
