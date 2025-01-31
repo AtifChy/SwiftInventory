@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
-using System.IO;
 using System.Windows.Forms;
 
 namespace SwiftInventory.Database
@@ -11,20 +11,7 @@ namespace SwiftInventory.Database
 
         static DatabaseConfig()
         {
-            string dataDirectory;
-
-#if DEBUG
-            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            dataDirectory = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\Data"));
-#else
-            // This part is incomplete, it's not necessary currently
-            dataDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "SwiftInventory");
-            Directory.CreateDirectory(dataDirectory);
-#endif
-            AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
-
-            const string databasePath = @"|DataDirectory|\SwiftInventoryDB.mdf";
-            ConnectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={databasePath};Integrated Security=True";
+            ConnectionString = ConfigurationManager.ConnectionStrings["SwiftInventoryDB"].ConnectionString;
         }
 
         public static SqlConnection GetConnection()
