@@ -1,49 +1,37 @@
+using SwiftInventory.Forms.Common;
+using SwiftInventory.Forms.Main.Product;
 using System;
-using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
 {
-    public partial class AdminForm : Form
+    public partial class AdminForm : BaseForm
     {
-        private Form _activeForm = null;
-
         public AdminForm()
         {
             InitializeComponent();
-            OpenChildForm(new DashboardForm());
         }
 
-        private void OpenChildForm(Form childForm)
+        private void AdminForm_Load(object sender, EventArgs e)
         {
-            _activeForm?.Close();
-            _activeForm = childForm;
-
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-
-            ChildFormPanel.Controls.Add(childForm);
-            ChildFormPanel.Tag = childForm;
-
-            childForm.BringToFront();
-            childForm.Show();
+            OpenChildForm(ChildFormPanel, new DashboardForm());
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Dashboard";
-            OpenChildForm(new DashboardForm());
+            OpenChildForm(ChildFormPanel, new DashboardForm());
         }
 
         private void CategoryButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Category";
-            OpenChildForm(new CategoryForm());
+            OpenChildForm(ChildFormPanel, new CategoryForm());
         }
 
         private void ProductButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Product";
+            OpenChildForm(ChildFormPanel, new ProductForm());
         }
 
         private void CustomerButton_Click(object sender, EventArgs e)

@@ -337,6 +337,7 @@ namespace SwiftInventory.Forms.Main
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AdminForm";
             this.Text = "Admin Form";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.MainTable.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);
             this.UserPicturePanel.ResumeLayout(false);

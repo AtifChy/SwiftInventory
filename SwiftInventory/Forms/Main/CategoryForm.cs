@@ -10,6 +10,10 @@ namespace SwiftInventory.Forms.Main
         {
             InitializeComponent();
         }
+        private void CategoryForm_Load(object sender, EventArgs e)
+        {
+            CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+        }
 
         private void AddCategoryButton_Click(object sender, EventArgs e)
         {
@@ -26,9 +30,20 @@ namespace SwiftInventory.Forms.Main
             }
         }
 
-        private void CategoryForm_Load(object sender, EventArgs e)
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
-            CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+            if (CategoryDataGridView.SelectedRows.Count > 0)
+            {
+                var selectedRow = CategoryDataGridView.SelectedRows[0];
+                var id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                CategoryQueries.DeleteCategory(id);
+                CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+                MessageBox.Show(@"Category deleted successfully.");
+            }
+            else
+            {
+                MessageBox.Show(@"Please select a category to delete.");
+            }
         }
     }
 }
