@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SwiftInventory
+namespace SwiftInventory.Forms.Main
 {
     public partial class ProductForm : Form
     {
@@ -33,7 +33,7 @@ namespace SwiftInventory
             if (!string.IsNullOrWhiteSpace(AddProductTextBox.Text))
             {
                 CategoryQueries.AddCategory(AddProductTextBox.Text);
-                ProductDataGridView.DataSource = CategoryQueries.GetAllCategories();
+                //ProductDataGridView.DataSource = CategoryQueries.GetAllCategories();
                 AddProductTextBox.Text = string.Empty;
                 MessageBox.Show(@"Product added successfully.");
             }

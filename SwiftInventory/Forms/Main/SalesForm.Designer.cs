@@ -1,4 +1,4 @@
-﻿namespace SwiftInventory
+﻿namespace SwiftInventory.Forms.Main
 {
     partial class SalesForm
     {

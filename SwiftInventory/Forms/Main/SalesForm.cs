@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SwiftInventory
+namespace SwiftInventory.Forms.Main
 {
     public partial class SalesForm : Form
     {
