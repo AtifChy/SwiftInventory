@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,6 +11,7 @@ namespace SwiftInventory.CustomControls
         private bool _isPlaceholderActive = true;
         private readonly Color _originalForeColor;
 
+        [Category("Appearance")]
         public string PlaceholderText
         {
             get => _placeholder;

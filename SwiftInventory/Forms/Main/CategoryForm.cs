@@ -1,5 +1,6 @@
 ﻿using SwiftInventory.Database;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -95,6 +96,12 @@ namespace SwiftInventory.Forms.Main
             AddNewCategoryLabel.Text = @"Add New Category";
             AddCategoryButton.Text = @"Add";
             CancelButton.Visible = false;
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string filter = SearchTextBox.Text.Trim();
+            ((DataTable)CategoryDataGridView.DataSource).DefaultView.RowFilter = $"[Category Name] LIKE '%{filter}%'";
         }
     }
 }

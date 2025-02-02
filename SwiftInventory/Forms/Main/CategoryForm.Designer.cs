@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -40,13 +40,14 @@
             this.EditButton = new SwiftInventory.CustomControls.RoundButton();
             this.CategoryDataGridView = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.SearchTextBox = new SwiftInventory.CustomControls.PlaceholderTextBox();
             this.ManageCategoryLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.CancelButton = new SwiftInventory.CustomControls.RoundButton();
             this.AddNewCategoryLabel = new System.Windows.Forms.Label();
             this.AddCategoryButton = new SwiftInventory.CustomControls.RoundButton();
-            this.AddCategoryText = new System.Windows.Forms.TextBox();
+            this.AddCategoryText = new SwiftInventory.CustomControls.PlaceholderTextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -150,20 +151,20 @@
             // 
             this.CategoryDataGridView.AllowUserToAddRows = false;
             this.CategoryDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.CategoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.CategoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.CategoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CategoryDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
             this.CategoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CategoryDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.CategoryDataGridView.ColumnHeadersHeight = 40;
             this.CategoryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CategoryDataGridView.GridColor = System.Drawing.SystemColors.Control;
@@ -171,18 +172,18 @@
             this.CategoryDataGridView.Name = "CategoryDataGridView";
             this.CategoryDataGridView.ReadOnly = true;
             this.CategoryDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.CategoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.CategoryDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.CategoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            this.CategoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.CategoryDataGridView.RowTemplate.Height = 35;
             this.CategoryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CategoryDataGridView.Size = new System.Drawing.Size(804, 426);
@@ -190,12 +191,25 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.SearchTextBox);
             this.panel5.Controls.Add(this.ManageCategoryLabel);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(804, 56);
             this.panel5.TabIndex = 1;
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.SearchTextBox.Location = new System.Drawing.Point(555, 11);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.PlaceholderText = "Type to search...";
+            this.SearchTextBox.Size = new System.Drawing.Size(226, 34);
+            this.SearchTextBox.TabIndex = 2;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
             // ManageCategoryLabel
             // 
@@ -240,7 +254,7 @@
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.ForeColor = System.Drawing.Color.Black;
-            this.CancelButton.Location = new System.Drawing.Point(159, 100);
+            this.CancelButton.Location = new System.Drawing.Point(165, 100);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(130, 40);
             this.CancelButton.TabIndex = 3;
@@ -253,7 +267,7 @@
             // 
             this.AddNewCategoryLabel.AutoSize = true;
             this.AddNewCategoryLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewCategoryLabel.Location = new System.Drawing.Point(17, 11);
+            this.AddNewCategoryLabel.Location = new System.Drawing.Point(23, 11);
             this.AddNewCategoryLabel.Name = "AddNewCategoryLabel";
             this.AddNewCategoryLabel.Size = new System.Drawing.Size(220, 32);
             this.AddNewCategoryLabel.TabIndex = 0;
@@ -282,9 +296,11 @@
             this.AddCategoryText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddCategoryText.BackColor = System.Drawing.SystemColors.Control;
-            this.AddCategoryText.Font = new System.Drawing.Font("Segoe UI Variable Display", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCategoryText.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCategoryText.ForeColor = System.Drawing.Color.Gray;
             this.AddCategoryText.Location = new System.Drawing.Point(23, 55);
             this.AddCategoryText.Name = "AddCategoryText";
+            this.AddCategoryText.PlaceholderText = "Enter Category...";
             this.AddCategoryText.Size = new System.Drawing.Size(758, 38);
             this.AddCategoryText.TabIndex = 1;
             // 
@@ -326,10 +342,11 @@
         private System.Windows.Forms.Label ManageCategoryLabel;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox AddCategoryText;
+        private CustomControls.PlaceholderTextBox AddCategoryText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CustomControls.RoundButton DeleteButton;
         private CustomControls.RoundButton EditButton;
         private CustomControls.RoundButton CancelButton;
+        private CustomControls.PlaceholderTextBox SearchTextBox;
     }
 }
