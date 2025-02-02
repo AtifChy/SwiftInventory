@@ -1,5 +1,6 @@
 using SwiftInventory.Forms.Common;
 using SwiftInventory.Forms.Main.Product;
+using SwiftInventory.Forms.Main.Supplier;
 using System;
 
 namespace SwiftInventory.Forms.Main
@@ -42,6 +43,7 @@ namespace SwiftInventory.Forms.Main
         private void SupplierButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Supplier";
+            OpenChildForm(ChildFormPanel, new SupplierForm());
         }
 
         private void SalesButton_Click(object sender, EventArgs e)

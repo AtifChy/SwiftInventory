@@ -78,6 +78,7 @@
     <Compile Include="Database\CategoryQueries.cs" />
     <Compile Include="Database\DatabaseConfig.cs" />
     <Compile Include="Database\ProductQueries.cs" />
+    <Compile Include="Database\SupplierQueries.cs" />
     <Compile Include="Forms\Auth\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,17 +115,35 @@
     <Compile Include="Forms\Main\Product\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main\Product\AddProductForm.cs">
+    <Compile Include="Forms\Main\Product\ProductDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main\Product\AddProductForm.Designer.cs">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
+    <Compile Include="Forms\Main\Product\ProductDetailsForm.Designer.cs">
+      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main\Product\ManageProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Main\Product\ManageProductForm.Designer.cs">
       <DependentUpon>ManageProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Supplier\ManageSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Supplier\ManageSupplierForm.Designer.cs">
+      <DependentUpon>ManageSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Supplier\SupplierDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Supplier\SupplierDetailsForm.Designer.cs">
+      <DependentUpon>SupplierDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Supplier\SupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Supplier\SupplierForm.Designer.cs">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,8 +162,17 @@
     <EmbeddedResource Include="Forms\Main\Product\ManageProductForm.resx">
       <DependentUpon>ManageProductForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main\Product\AddProductForm.resx">
-      <DependentUpon>AddProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main\Product\ProductDetailsForm.resx">
+      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Supplier\ManageSupplierForm.resx">
+      <DependentUpon>ManageSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Supplier\SupplierDetailsForm.resx">
+      <DependentUpon>SupplierDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Supplier\SupplierForm.resx">
+      <DependentUpon>SupplierForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +223,8 @@
       <DependentUpon>SwiftInventoryDB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

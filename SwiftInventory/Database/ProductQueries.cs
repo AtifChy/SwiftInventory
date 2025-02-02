@@ -30,5 +30,24 @@ namespace SwiftInventory.Database
                 }
             }
         }
+
+        public static void AddProduct(string productName, decimal price, int quantity, int categoryId, int supplierId)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    INSERT INTO Product (ProductName, Price, Quantity, CategoryID, SupplierID)
+                    VALUES (@ProductName, @Price, @Quantity, @CategoryID, @SupplierID)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductName", productName);
+                    command.Parameters.AddWithValue("@Price", price);
+                    command.Parameters.AddWithValue("@Quantity", quantity);
+                    command.Parameters.AddWithValue("@CategoryID", categoryId);
+                    command.Parameters.AddWithValue("@SupplierID", supplierId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

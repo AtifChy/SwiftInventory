@@ -1,5 +1,6 @@
 ﻿using SwiftInventory.Database;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
@@ -13,6 +14,7 @@ namespace SwiftInventory.Forms.Main
         private void CategoryForm_Load(object sender, EventArgs e)
         {
             CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+            CategoryDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Variable Display", 9.5F, FontStyle.Regular);
         }
 
         private void AddCategoryButton_Click(object sender, EventArgs e)
