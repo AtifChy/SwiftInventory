@@ -25,6 +25,27 @@ namespace SwiftInventory.Database
             }
         }
 
+        public static DataRow GetCategory(int categoryId)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    SELECT 
+                        CategoryID AS ID,
+                        CategoryName AS 'Category Name'
+                    FROM Category
+                    WHERE CategoryID = @CategoryID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@CategoryID", categoryId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable category = new DataTable();
+                    adapter.Fill(category);
+                    return category.Rows.Count > 0 ? category.Rows[0] : null;
+                }
+            }
+        }
+
         public static void AddCategory(string categoryName)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
@@ -36,6 +57,23 @@ namespace SwiftInventory.Database
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CategoryName", categoryName);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void UpdateCategory(int categoryId, string categoryName)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    UPDATE Category
+                    SET CategoryName = @CategoryName
+                    WHERE CategoryID = @CategoryID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@CategoryName", categoryName);
+                    command.Parameters.AddWithValue("@CategoryID", categoryId);
                     command.ExecuteNonQuery();
                 }
             }
