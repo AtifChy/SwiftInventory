@@ -75,7 +75,28 @@ namespace SwiftInventory.Forms.Main.Product
 
         private void SaveButton_Click(object sender, System.EventArgs e)
         {
+            string productName = NameTextBox.Text.Trim();
+            string price = PriceTextBox.Text.Trim();
+            string quantity = QuantityTextBox.Text.Trim();
+            int categoryId = (int)CategoryComboBox.SelectedValue;
+            int supplierId = (int)SupplierComboBox.SelectedValue;
 
+            if (string.IsNullOrWhiteSpace(productName) || string.IsNullOrWhiteSpace(price) || string.IsNullOrWhiteSpace(quantity))
+            {
+                MessageBox.Show(@"Product name cannot be empty.");
+                return;
+            }
+
+            bool success = ProductQueries.AddProduct(productName, decimal.Parse(price), int.Parse(quantity), categoryId, supplierId);
+            if (success)
+            {
+                MessageBox.Show(@"Product added successfully.");
+                OpenChildForm(Parent as Panel, new ManageProductForm());
+            }
+            else
+            {
+                MessageBox.Show(@"Failed to add product.");
+            }
         }
     }
 }

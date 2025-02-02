@@ -31,7 +31,7 @@ namespace SwiftInventory.Database
             }
         }
 
-        public static void AddProduct(string productName, decimal price, int quantity, int categoryId, int supplierId)
+        public static bool AddProduct(string productName, decimal price, int quantity, int categoryId, int supplierId)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
@@ -48,6 +48,46 @@ namespace SwiftInventory.Database
                     command.ExecuteNonQuery();
                 }
             }
+
+            return true;
+        }
+
+        public static bool UpdateProduct(int productId, string productName, decimal price, int quantity, int categoryId, int supplierId)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    UPDATE Product
+                    SET ProductName = @ProductName, Price = @Price, Quantity = @Quantity, CategoryID = @CategoryID, SupplierID = @SupplierID
+                    WHERE ProductID = @ProductID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductID", productId);
+                    command.Parameters.AddWithValue("@ProductName", productName);
+                    command.Parameters.AddWithValue("@Price", price);
+                    command.Parameters.AddWithValue("@Quantity", quantity);
+                    command.Parameters.AddWithValue("@CategoryID", categoryId);
+                    command.Parameters.AddWithValue("@SupplierID", supplierId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            return true;
+        }
+
+        public static bool DeleteProduct(int productId)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    DELETE FROM Product
+                    WHERE ProductID = @ProductID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductID", productId);
+                    command.ExecuteNonQuery();
+                }
+            }
+            return true;
         }
     }
 }
