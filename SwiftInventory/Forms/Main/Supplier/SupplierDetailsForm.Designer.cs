@@ -210,6 +210,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SupplierDetailsForm";
             this.Text = "SupplierDetailsForm";
+            this.Load += new System.EventHandler(this.SupplierDetailsForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

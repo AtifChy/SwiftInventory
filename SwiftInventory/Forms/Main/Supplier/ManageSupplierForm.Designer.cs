@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.AddButton = new SwiftInventory.CustomControls.RoundButton();
             this.DeleteButton = new SwiftInventory.CustomControls.RoundButton();
@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SupplierDataGridView = new System.Windows.Forms.DataGridView();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.FilterComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -124,6 +125,7 @@
             this.EditButton.TabIndex = 0;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // ViewButton
             // 
@@ -142,6 +144,7 @@
             this.ViewButton.TabIndex = 4;
             this.ViewButton.Text = "View";
             this.ViewButton.UseVisualStyleBackColor = false;
+            this.ViewButton.Click += new System.EventHandler(this.ViewButton_Click);
             // 
             // panel5
             // 
@@ -165,6 +168,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.FilterComboBox);
             this.panel1.Controls.Add(this.SearchTextBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -179,7 +183,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(136, 18);
+            this.label1.Location = new System.Drawing.Point(89, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 27);
             this.label1.TabIndex = 2;
@@ -189,40 +193,40 @@
             // 
             this.SupplierDataGridView.AllowUserToAddRows = false;
             this.SupplierDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.SupplierDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.SupplierDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.SupplierDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.SupplierDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
             this.SupplierDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SupplierDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.SupplierDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Variable Display", 7.8F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            this.SupplierDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI Variable Display", 7.8F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SupplierDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.SupplierDataGridView.ColumnHeadersHeight = 40;
             this.SupplierDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SupplierDataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.SupplierDataGridView.Location = new System.Drawing.Point(0, 124);
             this.SupplierDataGridView.Name = "SupplierDataGridView";
             this.SupplierDataGridView.ReadOnly = true;
-            this.SupplierDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Variable Display", 7.8F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SupplierDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.SupplierDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI Variable Display", 7.8F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SupplierDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.SupplierDataGridView.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            this.SupplierDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            this.SupplierDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.SupplierDataGridView.RowTemplate.Height = 35;
             this.SupplierDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.SupplierDataGridView.Size = new System.Drawing.Size(867, 504);
@@ -232,11 +236,22 @@
             // 
             this.SearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.SearchTextBox.Location = new System.Drawing.Point(217, 18);
+            this.SearchTextBox.Location = new System.Drawing.Point(170, 18);
             this.SearchTextBox.Name = "SearchTextBox";
             this.SearchTextBox.Size = new System.Drawing.Size(469, 34);
             this.SearchTextBox.TabIndex = 3;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // FilterComboBox
+            // 
+            this.FilterComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FilterComboBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
+            this.FilterComboBox.FormattingEnabled = true;
+            this.FilterComboBox.Location = new System.Drawing.Point(645, 17);
+            this.FilterComboBox.Name = "FilterComboBox";
+            this.FilterComboBox.Size = new System.Drawing.Size(121, 35);
+            this.FilterComboBox.TabIndex = 4;
             // 
             // ManageSupplierForm
             // 
@@ -277,5 +292,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView SupplierDataGridView;
         private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.ComboBox FilterComboBox;
     }
 }

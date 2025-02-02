@@ -26,6 +26,11 @@ namespace SwiftInventory.Forms.Main.Supplier
                 new Font("Segoe UI Variable Display", 9.5F, FontStyle.Regular);
             SupplierDataGridView.DefaultCellStyle.Font =
                 new Font("Segoe UI Variable Display", 9, FontStyle.Regular);
+
+            FilterComboBox.Items.Add("Name");
+            FilterComboBox.Items.Add("Phone");
+            FilterComboBox.Items.Add("Address");
+            FilterComboBox.SelectedIndex = 0;
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -45,8 +50,29 @@ namespace SwiftInventory.Forms.Main.Supplier
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            string filterBy = FilterComboBox.SelectedItem.ToString();
             string filter = SearchTextBox.Text.Trim();
-            (SupplierDataGridView.DataSource as DataTable).DefaultView.RowFilter = $"Name LIKE '%{filter}%'";
+            ((DataTable)SupplierDataGridView.DataSource).DefaultView.RowFilter = $"{filterBy} LIKE '%{filter}%'";
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (SupplierDataGridView.SelectedRows.Count > 0)
+            {
+                var selectedRow = SupplierDataGridView.SelectedRows[0];
+                var id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                OpenChildForm(Parent as Panel, new SupplierDetailsForm(id, true));
+            }
+        }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+            if (SupplierDataGridView.SelectedRows.Count > 0)
+            {
+                var selectedRow = SupplierDataGridView.SelectedRows[0];
+                var id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
+                OpenChildForm(Parent as Panel, new SupplierDetailsForm(id, false));
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ namespace SwiftInventory.Forms.Main.Product
                 SaveButton.Text = @"Save";
             }
             PopulateCategoryComboBox();
+            PopulateSupplierComboBox();
         }
 
         private void PopulateCategoryComboBox()
@@ -45,6 +46,13 @@ namespace SwiftInventory.Forms.Main.Product
             CategoryComboBox.DataSource = CategoryQueries.GetAllCategories();
             CategoryComboBox.DisplayMember = "Category Name";
             CategoryComboBox.ValueMember = "ID";
+        }
+
+        private void PopulateSupplierComboBox()
+        {
+            SupplierComboBox.DataSource = SupplierQueries.GetAllSuppliers();
+            SupplierComboBox.DisplayMember = "Name";
+            SupplierComboBox.ValueMember = "ID";
         }
 
         private void CancelButton_Click(object sender, System.EventArgs e)

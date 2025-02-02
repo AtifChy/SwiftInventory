@@ -12,7 +12,7 @@ namespace SwiftInventory.Database
                 const string query = @"
                     SELECT 
                         SupplierID AS ID,
-                        SupplierName AS 'Name',
+                        SupplierName AS Name,
                         Phone,
                         Address
                     FROM Supplier";
@@ -23,6 +23,29 @@ namespace SwiftInventory.Database
                     DataTable suppliers = new DataTable();
                     adapter.Fill(suppliers);
                     return suppliers;
+                }
+            }
+        }
+
+        public static DataRow GetSupplier(int supplierId)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    SELECT 
+                        SupplierID AS ID,
+                        SupplierName AS Name,
+                        Phone,
+                        Address
+                    FROM Supplier
+                    WHERE SupplierID = @SupplierID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SupplierID", supplierId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable supplier = new DataTable();
+                    adapter.Fill(supplier);
+                    return supplier.Rows.Count > 0 ? supplier.Rows[0] : null;
                 }
             }
         }
@@ -43,6 +66,26 @@ namespace SwiftInventory.Database
                 }
             }
 
+            return true;
+        }
+
+        public static bool UpdateSupplier(int supplierId, string supplierName, string phone, string address)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    UPDATE Supplier
+                    SET SupplierName = @SupplierName, Phone = @Phone, Address = @Address
+                    WHERE SupplierID = @SupplierID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@SupplierID", supplierId);
+                    command.Parameters.AddWithValue("@SupplierName", supplierName);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Address", address);
+                    command.ExecuteNonQuery();
+                }
+            }
             return true;
         }
 

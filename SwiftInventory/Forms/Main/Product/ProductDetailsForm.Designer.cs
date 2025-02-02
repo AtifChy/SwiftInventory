@@ -133,6 +133,7 @@
             // SupplierComboBox
             // 
             this.SupplierComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SupplierComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SupplierComboBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
             this.SupplierComboBox.FormattingEnabled = true;
             this.SupplierComboBox.Location = new System.Drawing.Point(600, 172);
@@ -194,6 +195,7 @@
             // CategoryComboBox
             // 
             this.CategoryComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryComboBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
             this.CategoryComboBox.FormattingEnabled = true;
             this.CategoryComboBox.Location = new System.Drawing.Point(170, 172);
@@ -312,7 +314,7 @@
             // 
             this.ProductImageFileDialog.FileName = "ProductImage";
             // 
-            // AddProductForm
+            // ProductDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -322,7 +324,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 7.8F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddProductForm";
+            this.Name = "ProductDetailsForm";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.ProductDetailsForm_Load);
             this.MainPanel.ResumeLayout(false);
