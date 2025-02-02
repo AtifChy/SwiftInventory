@@ -62,6 +62,18 @@ namespace SwiftInventory.Forms.Main
             HeaderLabel.Text = @"Sales";
         }
 
+        private void OrderButton_Click(object sender, EventArgs e)
+        {
+            HighlightButton(OrderButton);
+            HeaderLabel.Text = @"Order";
+        }
+
+        private void PurchaseOrderButton_Click(object sender, EventArgs e)
+        {
+            HighlightButton(PurchaseOrderButton);
+            HeaderLabel.Text = @"Purchase Order";
+        }
+
         private void MenuButton_Click(object sender, EventArgs e)
         {
             MenuPanel.Visible = !MenuPanel.Visible;
@@ -74,6 +86,25 @@ namespace SwiftInventory.Forms.Main
             MainTable.PerformLayout();
         }
 
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogOutButton_MouseEnter(object sender, EventArgs e)
+        {
+            LogOutButton.BackColor = Color.PaleVioletRed;
+            LogOutButton.ForeColor = Color.Black;
+            LogOutButton.IconColor = Color.Black;
+        }
+
+        private void LogOutButton_MouseLeave(object sender, EventArgs e)
+        {
+            LogOutButton.BackColor = Color.FromArgb(40, 39, 63);
+            LogOutButton.ForeColor = Color.FromArgb(238, 238, 255);
+            LogOutButton.IconColor = Color.FromArgb(238, 238, 255);
+        }
+
         private void HighlightButton(Button button)
         {
             if (_activeButton != null)
@@ -83,5 +114,6 @@ namespace SwiftInventory.Forms.Main
             _activeButton = button;
             _activeButton.BackColor = Color.FromArgb(63, 62, 101);
         }
+
     }
 }
