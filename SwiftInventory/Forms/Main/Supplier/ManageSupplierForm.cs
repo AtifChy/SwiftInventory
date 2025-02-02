@@ -23,9 +23,9 @@ namespace SwiftInventory.Forms.Main.Supplier
         {
             SupplierDataGridView.DataSource = SupplierQueries.GetAllSuppliers();
             SupplierDataGridView.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI Variable Display", 9.5F, FontStyle.Regular);
+                new Font("Segoe UI Variable Display Semib", 9.5F, FontStyle.Regular);
             SupplierDataGridView.DefaultCellStyle.Font =
-                new Font("Segoe UI Variable Display", 9, FontStyle.Regular);
+                new Font("Segoe UI Variable Display Semib", 9, FontStyle.Regular);
 
             FilterComboBox.Items.Add("Name");
             FilterComboBox.Items.Add("Phone");

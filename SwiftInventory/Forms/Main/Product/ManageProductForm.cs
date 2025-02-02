@@ -18,9 +18,9 @@ namespace SwiftInventory.Forms.Main.Product
         {
             ProductDataGridView.DataSource = ProductQueries.GetAllProducts();
             ProductDataGridView.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI Variable Display", 9.5F, FontStyle.Regular);
+                new Font("Segoe UI Variable Display Semib", 9.5F, FontStyle.Regular);
             ProductDataGridView.DefaultCellStyle.Font =
-                new Font("Segoe UI Variable Display", 9, FontStyle.Regular);
+                new Font("Segoe UI Variable Display Semib", 9, FontStyle.Regular);
 
             FilterComboBox.Items.Add("Product Name");
             FilterComboBox.Items.Add("Category");
