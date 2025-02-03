@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
 {
-    partial class AdminForm
+    partial class ManagerForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -31,10 +31,12 @@ namespace SwiftInventory.Forms.Main
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.MainTable = new System.Windows.Forms.TableLayoutPanel();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.LogOutButton = new FontAwesome.Sharp.IconButton();
+            this.PurchaseOrderButton = new FontAwesome.Sharp.IconButton();
+            this.OrderButton = new FontAwesome.Sharp.IconButton();
             this.SalesButton = new FontAwesome.Sharp.IconButton();
             this.SupplierButton = new FontAwesome.Sharp.IconButton();
             this.InventoryButton = new FontAwesome.Sharp.IconButton();
@@ -47,8 +49,6 @@ namespace SwiftInventory.Forms.Main
             this.HeaderPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.MenuButton = new FontAwesome.Sharp.IconButton();
-            this.PurchaseOrderButton = new FontAwesome.Sharp.IconButton();
-            this.OrderButton = new FontAwesome.Sharp.IconButton();
             this.MainTable.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.UserPicturePanel.SuspendLayout();
@@ -119,6 +119,54 @@ namespace SwiftInventory.Forms.Main
             this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             this.LogOutButton.MouseEnter += new System.EventHandler(this.LogOutButton_MouseEnter);
             this.LogOutButton.MouseLeave += new System.EventHandler(this.LogOutButton_MouseLeave);
+            // 
+            // PurchaseOrderButton
+            // 
+            this.PurchaseOrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.PurchaseOrderButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PurchaseOrderButton.FlatAppearance.BorderSize = 0;
+            this.PurchaseOrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
+            this.PurchaseOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PurchaseOrderButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchaseOrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.PurchaseOrderButton.IconChar = FontAwesome.Sharp.IconChar.TruckRampBox;
+            this.PurchaseOrderButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.PurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.PurchaseOrderButton.IconSize = 28;
+            this.PurchaseOrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.PurchaseOrderButton.Location = new System.Drawing.Point(0, 446);
+            this.PurchaseOrderButton.Name = "PurchaseOrderButton";
+            this.PurchaseOrderButton.Size = new System.Drawing.Size(300, 54);
+            this.PurchaseOrderButton.TabIndex = 8;
+            this.PurchaseOrderButton.Text = "Purchase Order";
+            this.PurchaseOrderButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PurchaseOrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PurchaseOrderButton.UseVisualStyleBackColor = false;
+            this.PurchaseOrderButton.Click += new System.EventHandler(this.PurchaseOrderButton_Click);
+            // 
+            // OrderButton
+            // 
+            this.OrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.OrderButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OrderButton.FlatAppearance.BorderSize = 0;
+            this.OrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
+            this.OrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrderButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.OrderButton.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
+            this.OrderButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.OrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.OrderButton.IconSize = 28;
+            this.OrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.OrderButton.Location = new System.Drawing.Point(0, 392);
+            this.OrderButton.Name = "OrderButton";
+            this.OrderButton.Size = new System.Drawing.Size(300, 54);
+            this.OrderButton.TabIndex = 7;
+            this.OrderButton.Text = "Order";
+            this.OrderButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.OrderButton.UseVisualStyleBackColor = false;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // SalesButton
             // 
@@ -309,63 +357,15 @@ namespace SwiftInventory.Forms.Main
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // PurchaseOrderButton
-            // 
-            this.PurchaseOrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.PurchaseOrderButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PurchaseOrderButton.FlatAppearance.BorderSize = 0;
-            this.PurchaseOrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
-            this.PurchaseOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PurchaseOrderButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseOrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.PurchaseOrderButton.IconChar = FontAwesome.Sharp.IconChar.TruckRampBox;
-            this.PurchaseOrderButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.PurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.PurchaseOrderButton.IconSize = 28;
-            this.PurchaseOrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PurchaseOrderButton.Location = new System.Drawing.Point(0, 446);
-            this.PurchaseOrderButton.Name = "PurchaseOrderButton";
-            this.PurchaseOrderButton.Size = new System.Drawing.Size(300, 54);
-            this.PurchaseOrderButton.TabIndex = 8;
-            this.PurchaseOrderButton.Text = "Purchase Order";
-            this.PurchaseOrderButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PurchaseOrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.PurchaseOrderButton.UseVisualStyleBackColor = false;
-            this.PurchaseOrderButton.Click += new System.EventHandler(this.PurchaseOrderButton_Click);
-            // 
-            // OrderButton
-            // 
-            this.OrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
-            this.OrderButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OrderButton.FlatAppearance.BorderSize = 0;
-            this.OrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
-            this.OrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrderButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.OrderButton.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
-            this.OrderButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.OrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.OrderButton.IconSize = 28;
-            this.OrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.OrderButton.Location = new System.Drawing.Point(0, 392);
-            this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(300, 54);
-            this.OrderButton.TabIndex = 7;
-            this.OrderButton.Text = "Order";
-            this.OrderButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OrderButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.OrderButton.UseVisualStyleBackColor = false;
-            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
-            // 
-            // AdminForm
+            // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 801);
             this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "AdminForm";
-            this.Text = "Admin Form";
+            this.Name = "ManagerForm";
+            this.Text = "Manager Form";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.MainTable.ResumeLayout(false);
             this.MenuPanel.ResumeLayout(false);

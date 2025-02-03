@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
 {
-    public partial class AdminForm : BaseForm
+    public partial class ManagerForm : BaseForm
     {
         private Button _activeButton;
 
-        public AdminForm()
+        public ManagerForm()
         {
             InitializeComponent();
         }
