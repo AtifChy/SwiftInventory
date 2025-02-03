@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -79,8 +79,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Database\CategoryQueries.cs" />
+    <Compile Include="Database\UserQueries.cs" />
     <Compile Include="Database\DatabaseConfig.cs" />
-    <Compile Include="Database\ProductQueries.cs" />
+    <Compile Include="Database\InventoryQueries.cs" />
     <Compile Include="Database\SupplierQueries.cs" />
     <Compile Include="Forms\Auth\LoginForm.cs">
       <SubType>Form</SubType>
@@ -112,23 +113,23 @@
     <Compile Include="Forms\Main\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main\Product\ProductForm.cs">
+    <Compile Include="Forms\Main\Inventory\InventoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main\Product\ProductForm.Designer.cs">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <Compile Include="Forms\Main\Inventory\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main\Product\ProductDetailsForm.cs">
+    <Compile Include="Forms\Main\Inventory\InventoryDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main\Product\ProductDetailsForm.Designer.cs">
-      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
+    <Compile Include="Forms\Main\Inventory\InventoryDetailsForm.Designer.cs">
+      <DependentUpon>InventoryDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main\Product\ManageProductForm.cs">
+    <Compile Include="Forms\Main\Inventory\ManageInventoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main\Product\ManageProductForm.Designer.cs">
-      <DependentUpon>ManageProductForm.cs</DependentUpon>
+    <Compile Include="Forms\Main\Inventory\ManageInventoryForm.Designer.cs">
+      <DependentUpon>ManageInventoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main\Supplier\ManageSupplierForm.cs">
       <SubType>Form</SubType>
@@ -148,6 +149,18 @@
     <Compile Include="Forms\Main\Supplier\SupplierForm.Designer.cs">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\User\ManageUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\ManageUserForm.Designer.cs">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Main\AdminForm.resx">
@@ -159,14 +172,14 @@
     <EmbeddedResource Include="Forms\Main\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main\Product\ProductForm.resx">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main\Inventory\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main\Product\ManageProductForm.resx">
-      <DependentUpon>ManageProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main\Inventory\ManageInventoryForm.resx">
+      <DependentUpon>ManageInventoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Main\Product\ProductDetailsForm.resx">
-      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main\Inventory\InventoryDetailsForm.resx">
+      <DependentUpon>InventoryDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\Supplier\ManageSupplierForm.resx">
       <DependentUpon>ManageSupplierForm.cs</DependentUpon>
@@ -176,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\Supplier\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\ManageUserForm.resx">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -229,5 +248,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
