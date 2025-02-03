@@ -12,6 +12,10 @@ namespace SwiftInventory.Forms.Main
         public AdminForm()
         {
             InitializeComponent();
+<<<<<<< HEAD
+=======
+            //OpenChildForm(new DashboardForm());
+>>>>>>> origin/akash-pc
         }
 
         private void AdminForm_Load(object sender, EventArgs e)
@@ -34,24 +38,37 @@ namespace SwiftInventory.Forms.Main
         private void ProductButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Product";
+<<<<<<< HEAD
             OpenChildForm(ChildFormPanel, new ProductForm());
+=======
+            OpenChildForm(new ProductForm());        
+>>>>>>> origin/akash-pc
         }
 
         private void CustomerButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Customer";
+<<<<<<< HEAD
             OpenChildForm(ChildFormPanel, new CustomerForm());
+=======
+            OpenChildForm(new CustomerFrorm());
+>>>>>>> origin/akash-pc
         }
 
         private void SupplierButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Supplier";
+<<<<<<< HEAD
             OpenChildForm(ChildFormPanel, new SupplierForm());
+=======
+            OpenChildForm(new SupplierForm());
+>>>>>>> origin/akash-pc
         }
 
         private void SalesButton_Click(object sender, EventArgs e)
         {
             HeaderLabel.Text = @"Sales";
+            OpenChildForm(new SalesForm());
         }
 
         private void MenuButton_Click(object sender, EventArgs e)

@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SwiftInventory.Forms.Main
+namespace SwiftInventory
 {
-    public partial class DashboardForm : Form
+    public partial class AddCustomer : Form
     {
-        public DashboardForm()
+        public AddCustomer()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DashboardForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

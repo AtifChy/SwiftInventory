@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
 {
-    public partial class DashboardForm : Form
+    public partial class CustomerEditForm : Form
     {
-        public DashboardForm()
+        public CustomerEditForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Back_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void DashboardForm_Load(object sender, EventArgs e)
-        {
-
+            new CustomerFrorm().Show();
+            this.Hide();
         }
     }
 }

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
 {
-    public partial class DashboardForm : Form
+    public partial class SupplierForm : Form
     {
-        public DashboardForm()
+        public SupplierForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DashboardForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

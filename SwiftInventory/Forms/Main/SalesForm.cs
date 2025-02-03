@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main
 {
-    public partial class DashboardForm : Form
+    public partial class SalesForm : Form
     {
-        public DashboardForm()
+        public SalesForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void DashboardForm_Load(object sender, EventArgs e)
+        private void SalesForm_Load(object sender, EventArgs e)
         {
 
         }
