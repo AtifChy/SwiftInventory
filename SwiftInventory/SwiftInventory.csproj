@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -76,6 +76,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Database\CategoryQueries.cs" />
+    <Compile Include="Database\CustomerQueries.cs" />
     <Compile Include="Database\DatabaseConfig.cs" />
     <Compile Include="Database\ProductQueries.cs" />
     <Compile Include="Database\SupplierQueries.cs" />
@@ -91,17 +92,35 @@
     <Compile Include="Forms\Common\BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Main\AdminForm.cs">
+    <Compile Include="Forms\Main\SalesAndOrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Main\AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <Compile Include="Forms\Main\SalesAndOrdersForm.Designer.cs">
+      <DependentUpon>SalesAndOrdersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main\CategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Main\CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\ManageCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\ManageCustomerForm.Designer.cs">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerDetailsForm.Designer.cs">
+      <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main\DashboardForm.cs">
       <SubType>Form</SubType>
@@ -147,11 +166,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Main\AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Main\SalesAndOrdersForm.resx">
+      <DependentUpon>SalesAndOrdersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Customer\CustomerDetailsForm.resx">
+      <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Customer\ManageCustomerForm.resx">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
@@ -226,5 +251,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
