@@ -1,4 +1,5 @@
-﻿using SwiftInventory.Forms.Main;
+﻿using SwiftInventory.Common;
+using SwiftInventory.Forms.Main;
 using System;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace SwiftInventory
             // Test code to check if the database is connected
             // var connected = DatabaseConfig.IsConnected();
             // MessageBox.Show(connected ? "Connected" : "Not connected");
+            UserSession.UserId = 1;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

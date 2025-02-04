@@ -36,16 +36,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.DeleteButton = new SwiftInventory.CustomControls.RoundButton();
-            this.EditButton = new SwiftInventory.CustomControls.RoundButton();
             this.CategoryDataGridView = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.SearchTextBox = new SwiftInventory.CustomControls.PlaceholderTextBox();
             this.ManageCategoryLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.CancelButton = new SwiftInventory.CustomControls.RoundButton();
             this.AddNewCategoryLabel = new System.Windows.Forms.Label();
+            this.DeleteButton = new SwiftInventory.CustomControls.RoundButton();
+            this.EditButton = new SwiftInventory.CustomControls.RoundButton();
+            this.SearchTextBox = new SwiftInventory.CustomControls.PlaceholderTextBox();
+            this.CancelButton = new SwiftInventory.CustomControls.RoundButton();
             this.AddCategoryButton = new SwiftInventory.CustomControls.RoundButton();
             this.AddCategoryText = new SwiftInventory.CustomControls.PlaceholderTextBox();
             this.panel1.SuspendLayout();
@@ -109,44 +109,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(804, 58);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DeleteButton.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.DeleteButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.DeleteButton.BorderRadius = 5;
-            this.DeleteButton.BorderSize = 0;
-            this.DeleteButton.FlatAppearance.BorderSize = 0;
-            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteButton.ForeColor = System.Drawing.Color.Black;
-            this.DeleteButton.Location = new System.Drawing.Point(631, 9);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(130, 40);
-            this.DeleteButton.TabIndex = 1;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = false;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.EditButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.EditButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.EditButton.BorderRadius = 5;
-            this.EditButton.BorderSize = 0;
-            this.EditButton.FlatAppearance.BorderSize = 0;
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditButton.ForeColor = System.Drawing.Color.Black;
-            this.EditButton.Location = new System.Drawing.Point(43, 9);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(130, 40);
-            this.EditButton.TabIndex = 0;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = false;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
             // CategoryDataGridView
             // 
             this.CategoryDataGridView.AllowUserToAddRows = false;
@@ -201,18 +163,6 @@
             this.panel5.Size = new System.Drawing.Size(804, 56);
             this.panel5.TabIndex = 1;
             // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.SearchTextBox.Location = new System.Drawing.Point(555, 11);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.PlaceholderText = "Type to search...";
-            this.SearchTextBox.Size = new System.Drawing.Size(226, 34);
-            this.SearchTextBox.TabIndex = 2;
-            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
-            // 
             // ManageCategoryLabel
             // 
             this.ManageCategoryLabel.AutoSize = true;
@@ -246,6 +196,66 @@
             this.panel3.Size = new System.Drawing.Size(806, 164);
             this.panel3.TabIndex = 2;
             // 
+            // AddNewCategoryLabel
+            // 
+            this.AddNewCategoryLabel.AutoSize = true;
+            this.AddNewCategoryLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewCategoryLabel.Location = new System.Drawing.Point(23, 11);
+            this.AddNewCategoryLabel.Name = "AddNewCategoryLabel";
+            this.AddNewCategoryLabel.Size = new System.Drawing.Size(220, 32);
+            this.AddNewCategoryLabel.TabIndex = 0;
+            this.AddNewCategoryLabel.Text = "Add New Category";
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DeleteButton.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.DeleteButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.DeleteButton.BorderRadius = 5;
+            this.DeleteButton.BorderSize = 0;
+            this.DeleteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.Black;
+            this.DeleteButton.Location = new System.Drawing.Point(631, 9);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(130, 40);
+            this.DeleteButton.TabIndex = 1;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EditButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.EditButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.EditButton.BorderRadius = 5;
+            this.EditButton.BorderSize = 0;
+            this.EditButton.FlatAppearance.BorderSize = 0;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditButton.ForeColor = System.Drawing.Color.Black;
+            this.EditButton.Location = new System.Drawing.Point(43, 9);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(130, 40);
+            this.EditButton.TabIndex = 0;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.SearchTextBox.Location = new System.Drawing.Point(555, 11);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.PlaceholderText = "Type to search...";
+            this.SearchTextBox.Size = new System.Drawing.Size(226, 34);
+            this.SearchTextBox.TabIndex = 2;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
             // CancelButton
             // 
             this.CancelButton.BackColor = System.Drawing.Color.PaleVioletRed;
@@ -264,16 +274,6 @@
             this.CancelButton.UseVisualStyleBackColor = false;
             this.CancelButton.Visible = false;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // AddNewCategoryLabel
-            // 
-            this.AddNewCategoryLabel.AutoSize = true;
-            this.AddNewCategoryLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewCategoryLabel.Location = new System.Drawing.Point(23, 11);
-            this.AddNewCategoryLabel.Name = "AddNewCategoryLabel";
-            this.AddNewCategoryLabel.Size = new System.Drawing.Size(220, 32);
-            this.AddNewCategoryLabel.TabIndex = 0;
-            this.AddNewCategoryLabel.Text = "Add New Category";
             // 
             // AddCategoryButton
             // 
@@ -348,7 +348,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CustomControls.RoundButton DeleteButton;
         private CustomControls.RoundButton EditButton;
-        private CustomControls.RoundButton CancelButton;
+        private new CustomControls.RoundButton CancelButton;
         private CustomControls.PlaceholderTextBox SearchTextBox;
     }
 }

@@ -16,7 +16,7 @@ namespace SwiftInventory.Forms.Main.Product
 
         private void ManageProductForm_Load(object sender, EventArgs e)
         {
-            ProductDataGridView.DataSource = ProductQueries.GetAllProducts();
+            ProductDataGridView.DataSource = ProductQueries.GetProducts();
             ProductDataGridView.ColumnHeadersDefaultCellStyle.Font =
                 new Font("Segoe UI Variable Display Semib", 9.5F, FontStyle.Regular);
             ProductDataGridView.DefaultCellStyle.Font =
@@ -45,7 +45,6 @@ namespace SwiftInventory.Forms.Main.Product
             var selectedRow = ProductDataGridView.SelectedRows[0];
             var productId = Convert.ToInt32(selectedRow.Cells["ID"].Value);
 
-
             var result = MessageBox.Show(this,
                 @"Are you sure you want to delete this product?",
                 @"Confirm Delete",
@@ -53,23 +52,13 @@ namespace SwiftInventory.Forms.Main.Product
                 MessageBoxIcon.Question);
             if (result != DialogResult.Yes) return;
 
-            if (ProductQueries.DeleteProduct(productId))
-            {
-                MessageBox.Show(this,
-                    @"Product deleted successfully.",
-                    @"Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                ProductDataGridView.DataSource = ProductQueries.GetAllProducts();
-            }
-            else
-            {
-                MessageBox.Show(this,
-                    @"Failed to delete product.",
-                    @"Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            ProductQueries.DeleteProduct(productId);
+            MessageBox.Show(this,
+                @"Product deleted successfully.",
+                @"Success",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            ProductDataGridView.DataSource = ProductQueries.GetProducts();
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)

@@ -344,7 +344,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label ProductDetailsHeaderLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private CustomControls.RoundButton CancelButton;
+        private new CustomControls.RoundButton CancelButton;
         private CustomControls.RoundButton SaveButton;
         private System.Windows.Forms.OpenFileDialog ProductImageFileDialog;
         private System.Windows.Forms.Panel panel1;

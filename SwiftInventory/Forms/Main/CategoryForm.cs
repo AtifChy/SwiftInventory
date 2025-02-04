@@ -17,7 +17,7 @@ namespace SwiftInventory.Forms.Main
 
         private void CategoryForm_Load(object sender, EventArgs e)
         {
-            CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+            CategoryDataGridView.DataSource = CategoryQueries.GetCategories();
             CategoryDataGridView.ColumnHeadersDefaultCellStyle.Font =
                 new Font("Segoe UI Variable Display Semib", 9.5F, FontStyle.Regular);
             CategoryDataGridView.DefaultCellStyle.Font =
@@ -44,7 +44,7 @@ namespace SwiftInventory.Forms.Main
                     MessageBox.Show(@"Category added successfully.");
                 }
 
-                CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
+                CategoryDataGridView.DataSource = CategoryQueries.GetCategories();
                 ResetForm();
             }
             else
@@ -55,17 +55,24 @@ namespace SwiftInventory.Forms.Main
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (CategoryDataGridView.SelectedRows.Count > 0)
+            int selectedRowCount = CategoryDataGridView.SelectedRows.Count;
+            if (selectedRowCount > 0)
             {
-                var selectedRow = CategoryDataGridView.SelectedRows[0];
-                var id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-                CategoryQueries.DeleteCategory(id);
-                CategoryDataGridView.DataSource = CategoryQueries.GetAllCategories();
-                MessageBox.Show(@"Category deleted successfully.");
+                foreach (DataGridViewRow row in CategoryDataGridView.SelectedRows)
+                {
+                    var id = Convert.ToInt32(row.Cells["ID"].Value);
+                    CategoryQueries.DeleteCategory(id);
+                }
+
+                CategoryDataGridView.DataSource = CategoryQueries.GetCategories();
+                string message = selectedRowCount > 1
+                    ? @"Categories deleted successfully"
+                    : @"Category deleted successfully";
+                MessageBox.Show(this, message, @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(@"Please select a category to delete.");
+                MessageBox.Show(this, @"Please select a category to delete.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

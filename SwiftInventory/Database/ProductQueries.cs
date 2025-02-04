@@ -5,15 +5,15 @@ namespace SwiftInventory.Database
 {
     internal class ProductQueries
     {
-        public static DataTable GetAllProducts()
+        public static DataTable GetProducts()
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
                 const string query = @"
                     SELECT 
                         Product.ProductID AS ID,
-                        Product.ProductName AS 'Product Name',
-                        Product.Price AS Price,
+                        Product.ProductName AS [Product Name],
+                        Product.PricePerUnit AS [Price Per Unit],
                         Product.Quantity AS Quantity,
                         Category.CategoryName AS Category,
                         Supplier.SupplierName AS Supplier
@@ -31,28 +31,52 @@ namespace SwiftInventory.Database
             }
         }
 
-        public static bool AddProduct(string productName, decimal price, int quantity, int categoryId, int supplierId)
+        public static void GetProduct(int productId, out string productName, out decimal pricePerUnit, out int quantity, out int categoryId, out int supplierId)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
                 const string query = @"
-                    INSERT INTO Product (ProductName, Price, Quantity, CategoryID, SupplierID)
-                    VALUES (@ProductName, @Price, @Quantity, @CategoryID, @SupplierID)";
+                    SELECT 
+                        ProductName, PricePerUnit, Quantity, CategoryID, SupplierID
+                    FROM Product
+                    WHERE ProductID = @ProductID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductID", productId);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        reader.Read();
+                        productName = reader.GetString(0);
+                        pricePerUnit = reader.GetDecimal(1);
+                        quantity = reader.GetInt32(2);
+                        categoryId = reader.GetInt32(3);
+                        supplierId = reader.GetInt32(4);
+                    }
+                }
+            }
+        }
+
+        public static void AddProduct(string productName, decimal pricePerUnit, int quantity, int categoryId, int supplierId, string image)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    INSERT INTO Product (ProductName, PricePerUnit, Quantity, CategoryID, SupplierID, Image)
+                    VALUES (@ProductName, @PricePerUnit, @Quantity, @CategoryID, @SupplierID, @Image)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductName", productName);
-                    command.Parameters.AddWithValue("@Price", price);
+                    command.Parameters.AddWithValue("@PricePerUnit", pricePerUnit);
                     command.Parameters.AddWithValue("@Quantity", quantity);
                     command.Parameters.AddWithValue("@CategoryID", categoryId);
                     command.Parameters.AddWithValue("@SupplierID", supplierId);
+                    command.Parameters.AddWithValue("@Image", image);
                     command.ExecuteNonQuery();
                 }
             }
-
-            return true;
         }
 
-        public static bool UpdateProduct(int productId, string productName, decimal price, int quantity, int categoryId, int supplierId)
+        public static void UpdateProduct(int productId, string productName, decimal price, int quantity, int categoryId, int supplierId)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
@@ -60,6 +84,7 @@ namespace SwiftInventory.Database
                     UPDATE Product
                     SET ProductName = @ProductName, Price = @Price, Quantity = @Quantity, CategoryID = @CategoryID, SupplierID = @SupplierID
                     WHERE ProductID = @ProductID";
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductID", productId);
@@ -71,10 +96,9 @@ namespace SwiftInventory.Database
                     command.ExecuteNonQuery();
                 }
             }
-            return true;
         }
 
-        public static bool DeleteProduct(int productId)
+        public static void DeleteProduct(int productId)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
@@ -87,7 +111,6 @@ namespace SwiftInventory.Database
                     command.ExecuteNonQuery();
                 }
             }
-            return true;
         }
     }
 }

@@ -1,4 +1,5 @@
 using SwiftInventory.Forms.Common;
+using SwiftInventory.Forms.Main.Order;
 using SwiftInventory.Forms.Main.Product;
 using SwiftInventory.Forms.Main.Supplier;
 using System;
@@ -66,6 +67,7 @@ namespace SwiftInventory.Forms.Main
         {
             HighlightButton(OrderButton);
             HeaderLabel.Text = @"Order";
+            OpenChildForm(ChildFormPanel, new OrderForm());
         }
 
         private void PurchaseOrderButton_Click(object sender, EventArgs e)

@@ -5,7 +5,7 @@ namespace SwiftInventory.Database
 {
     internal static class CategoryQueries
     {
-        public static DataTable GetAllCategories()
+        public static DataTable GetCategories()
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {

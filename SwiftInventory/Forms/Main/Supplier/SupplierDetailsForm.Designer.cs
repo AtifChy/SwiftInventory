@@ -228,7 +228,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CustomControls.RoundButton SaveButton;
-        private CustomControls.RoundButton CancelButton;
+        private new CustomControls.RoundButton CancelButton;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label SupplierDetailsHeaderLabel;
         private System.Windows.Forms.Label label6;
