@@ -73,7 +73,7 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.LoginButton.Location = new System.Drawing.Point(230, 443);
+            this.LoginButton.Location = new System.Drawing.Point(224, 443);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(120, 40);
             this.LoginButton.TabIndex = 4;
@@ -98,7 +98,7 @@
             this.ClearFieldsLinkLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ClearFieldsLinkLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClearFieldsLinkLabel.LinkColor = System.Drawing.Color.White;
-            this.ClearFieldsLinkLabel.Location = new System.Drawing.Point(545, 397);
+            this.ClearFieldsLinkLabel.Location = new System.Drawing.Point(602, 397);
             this.ClearFieldsLinkLabel.Name = "ClearFieldsLinkLabel";
             this.ClearFieldsLinkLabel.Size = new System.Drawing.Size(88, 20);
             this.ClearFieldsLinkLabel.TabIndex = 6;
