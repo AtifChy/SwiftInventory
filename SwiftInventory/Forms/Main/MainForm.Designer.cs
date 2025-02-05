@@ -33,13 +33,6 @@ namespace SwiftInventory.Forms.Main
         {
             this.MainTable = new System.Windows.Forms.TableLayoutPanel();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.UserPicturePanel = new System.Windows.Forms.Panel();
-            this.UserRoleLabel = new System.Windows.Forms.Label();
-            this.UserNameLabel = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.ChildFormPanel = new System.Windows.Forms.Panel();
-            this.HeaderPanel = new System.Windows.Forms.Panel();
-            this.HeaderLabel = new System.Windows.Forms.Label();
             this.SystemUsersButton = new FontAwesome.Sharp.IconButton();
             this.LogOutButton = new FontAwesome.Sharp.IconButton();
             this.PurchaseOrderButton = new FontAwesome.Sharp.IconButton();
@@ -50,14 +43,21 @@ namespace SwiftInventory.Forms.Main
             this.ProductButton = new FontAwesome.Sharp.IconButton();
             this.CategoryButton = new FontAwesome.Sharp.IconButton();
             this.DashboardButton = new FontAwesome.Sharp.IconButton();
+            this.UserPicturePanel = new System.Windows.Forms.Panel();
+            this.UserRoleLabel = new System.Windows.Forms.Label();
+            this.UserNameLabel = new System.Windows.Forms.Label();
             this.UserPictureBox = new System.Windows.Forms.PictureBox();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.ChildFormPanel = new System.Windows.Forms.Panel();
+            this.HeaderPanel = new System.Windows.Forms.Panel();
+            this.HeaderLabel = new System.Windows.Forms.Label();
             this.MenuButton = new FontAwesome.Sharp.IconButton();
             this.MainTable.SuspendLayout();
             this.MenuPanel.SuspendLayout();
             this.UserPicturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
             this.MainPanel.SuspendLayout();
             this.HeaderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainTable
@@ -101,83 +101,6 @@ namespace SwiftInventory.Forms.Main
             this.MenuPanel.TabIndex = 0;
             this.MenuPanel.VisibleChanged += new System.EventHandler(this.MenuPanel_VisibleChanged);
             // 
-            // UserPicturePanel
-            // 
-            this.UserPicturePanel.Controls.Add(this.UserRoleLabel);
-            this.UserPicturePanel.Controls.Add(this.UserNameLabel);
-            this.UserPicturePanel.Controls.Add(this.UserPictureBox);
-            this.UserPicturePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.UserPicturePanel.Location = new System.Drawing.Point(0, 0);
-            this.UserPicturePanel.Name = "UserPicturePanel";
-            this.UserPicturePanel.Size = new System.Drawing.Size(300, 176);
-            this.UserPicturePanel.TabIndex = 0;
-            // 
-            // UserRoleLabel
-            // 
-            this.UserRoleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.UserRoleLabel.AutoSize = true;
-            this.UserRoleLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserRoleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.UserRoleLabel.Location = new System.Drawing.Point(182, 133);
-            this.UserRoleLabel.Name = "UserRoleLabel";
-            this.UserRoleLabel.Size = new System.Drawing.Size(58, 24);
-            this.UserRoleLabel.TabIndex = 2;
-            this.UserRoleLabel.Text = "(Role)";
-            // 
-            // UserNameLabel
-            // 
-            this.UserNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.UserNameLabel.AutoSize = true;
-            this.UserNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.UserNameLabel.Location = new System.Drawing.Point(123, 127);
-            this.UserNameLabel.Name = "UserNameLabel";
-            this.UserNameLabel.Size = new System.Drawing.Size(62, 31);
-            this.UserNameLabel.TabIndex = 1;
-            this.UserNameLabel.Text = "User";
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Controls.Add(this.ChildFormPanel);
-            this.MainPanel.Controls.Add(this.HeaderPanel);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(300, 0);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(882, 833);
-            this.MainPanel.TabIndex = 1;
-            // 
-            // ChildFormPanel
-            // 
-            this.ChildFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChildFormPanel.Location = new System.Drawing.Point(0, 65);
-            this.ChildFormPanel.Name = "ChildFormPanel";
-            this.ChildFormPanel.Size = new System.Drawing.Size(882, 768);
-            this.ChildFormPanel.TabIndex = 1;
-            // 
-            // HeaderPanel
-            // 
-            this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
-            this.HeaderPanel.Controls.Add(this.HeaderLabel);
-            this.HeaderPanel.Controls.Add(this.MenuButton);
-            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
-            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(882, 65);
-            this.HeaderPanel.TabIndex = 0;
-            // 
-            // HeaderLabel
-            // 
-            this.HeaderLabel.AutoSize = true;
-            this.HeaderLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HeaderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.HeaderLabel.Location = new System.Drawing.Point(58, 12);
-            this.HeaderLabel.Name = "HeaderLabel";
-            this.HeaderLabel.Size = new System.Drawing.Size(151, 37);
-            this.HeaderLabel.TabIndex = 1;
-            this.HeaderLabel.Text = "Dashboard";
-            // 
             // SystemUsersButton
             // 
             this.SystemUsersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
@@ -192,7 +115,7 @@ namespace SwiftInventory.Forms.Main
             this.SystemUsersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SystemUsersButton.IconSize = 28;
             this.SystemUsersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SystemUsersButton.Location = new System.Drawing.Point(0, 608);
+            this.SystemUsersButton.Location = new System.Drawing.Point(0, 623);
             this.SystemUsersButton.Name = "SystemUsersButton";
             this.SystemUsersButton.Size = new System.Drawing.Size(300, 54);
             this.SystemUsersButton.TabIndex = 10;
@@ -241,7 +164,7 @@ namespace SwiftInventory.Forms.Main
             this.PurchaseOrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.PurchaseOrderButton.IconSize = 28;
             this.PurchaseOrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.PurchaseOrderButton.Location = new System.Drawing.Point(0, 554);
+            this.PurchaseOrderButton.Location = new System.Drawing.Point(0, 569);
             this.PurchaseOrderButton.Name = "PurchaseOrderButton";
             this.PurchaseOrderButton.Size = new System.Drawing.Size(300, 54);
             this.PurchaseOrderButton.TabIndex = 8;
@@ -265,7 +188,7 @@ namespace SwiftInventory.Forms.Main
             this.OrderButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.OrderButton.IconSize = 28;
             this.OrderButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.OrderButton.Location = new System.Drawing.Point(0, 500);
+            this.OrderButton.Location = new System.Drawing.Point(0, 515);
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(300, 54);
             this.OrderButton.TabIndex = 7;
@@ -289,7 +212,7 @@ namespace SwiftInventory.Forms.Main
             this.SalesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SalesButton.IconSize = 28;
             this.SalesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SalesButton.Location = new System.Drawing.Point(0, 446);
+            this.SalesButton.Location = new System.Drawing.Point(0, 461);
             this.SalesButton.Name = "SalesButton";
             this.SalesButton.Size = new System.Drawing.Size(300, 54);
             this.SalesButton.TabIndex = 6;
@@ -314,7 +237,7 @@ namespace SwiftInventory.Forms.Main
             this.SupplierButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SupplierButton.IconSize = 28;
             this.SupplierButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SupplierButton.Location = new System.Drawing.Point(0, 392);
+            this.SupplierButton.Location = new System.Drawing.Point(0, 407);
             this.SupplierButton.Name = "SupplierButton";
             this.SupplierButton.Size = new System.Drawing.Size(300, 54);
             this.SupplierButton.TabIndex = 5;
@@ -338,7 +261,7 @@ namespace SwiftInventory.Forms.Main
             this.CustomerButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.CustomerButton.IconSize = 28;
             this.CustomerButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CustomerButton.Location = new System.Drawing.Point(0, 338);
+            this.CustomerButton.Location = new System.Drawing.Point(0, 353);
             this.CustomerButton.Name = "CustomerButton";
             this.CustomerButton.Size = new System.Drawing.Size(300, 54);
             this.CustomerButton.TabIndex = 4;
@@ -362,7 +285,7 @@ namespace SwiftInventory.Forms.Main
             this.ProductButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ProductButton.IconSize = 28;
             this.ProductButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ProductButton.Location = new System.Drawing.Point(0, 284);
+            this.ProductButton.Location = new System.Drawing.Point(0, 299);
             this.ProductButton.Name = "ProductButton";
             this.ProductButton.Size = new System.Drawing.Size(300, 54);
             this.ProductButton.TabIndex = 3;
@@ -386,7 +309,7 @@ namespace SwiftInventory.Forms.Main
             this.CategoryButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.CategoryButton.IconSize = 28;
             this.CategoryButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CategoryButton.Location = new System.Drawing.Point(0, 230);
+            this.CategoryButton.Location = new System.Drawing.Point(0, 245);
             this.CategoryButton.Name = "CategoryButton";
             this.CategoryButton.Size = new System.Drawing.Size(300, 54);
             this.CategoryButton.TabIndex = 2;
@@ -410,7 +333,7 @@ namespace SwiftInventory.Forms.Main
             this.DashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DashboardButton.IconSize = 28;
             this.DashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DashboardButton.Location = new System.Drawing.Point(0, 176);
+            this.DashboardButton.Location = new System.Drawing.Point(0, 191);
             this.DashboardButton.Name = "DashboardButton";
             this.DashboardButton.Size = new System.Drawing.Size(300, 54);
             this.DashboardButton.TabIndex = 1;
@@ -419,6 +342,41 @@ namespace SwiftInventory.Forms.Main
             this.DashboardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DashboardButton.UseVisualStyleBackColor = false;
             this.DashboardButton.Click += new System.EventHandler(this.DashboardButton_Click);
+            // 
+            // UserPicturePanel
+            // 
+            this.UserPicturePanel.Controls.Add(this.UserRoleLabel);
+            this.UserPicturePanel.Controls.Add(this.UserNameLabel);
+            this.UserPicturePanel.Controls.Add(this.UserPictureBox);
+            this.UserPicturePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserPicturePanel.Location = new System.Drawing.Point(0, 0);
+            this.UserPicturePanel.Name = "UserPicturePanel";
+            this.UserPicturePanel.Size = new System.Drawing.Size(300, 191);
+            this.UserPicturePanel.TabIndex = 0;
+            // 
+            // UserRoleLabel
+            // 
+            this.UserRoleLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.UserRoleLabel.AutoSize = true;
+            this.UserRoleLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserRoleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.UserRoleLabel.Location = new System.Drawing.Point(125, 158);
+            this.UserRoleLabel.Name = "UserRoleLabel";
+            this.UserRoleLabel.Size = new System.Drawing.Size(58, 24);
+            this.UserRoleLabel.TabIndex = 2;
+            this.UserRoleLabel.Text = "(Role)";
+            // 
+            // UserNameLabel
+            // 
+            this.UserNameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.UserNameLabel.AutoSize = true;
+            this.UserNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserNameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.UserNameLabel.Location = new System.Drawing.Point(123, 127);
+            this.UserNameLabel.Name = "UserNameLabel";
+            this.UserNameLabel.Size = new System.Drawing.Size(62, 31);
+            this.UserNameLabel.TabIndex = 1;
+            this.UserNameLabel.Text = "User";
             // 
             // UserPictureBox
             // 
@@ -430,6 +388,48 @@ namespace SwiftInventory.Forms.Main
             this.UserPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UserPictureBox.TabIndex = 0;
             this.UserPictureBox.TabStop = false;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.ChildFormPanel);
+            this.MainPanel.Controls.Add(this.HeaderPanel);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(300, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(882, 833);
+            this.MainPanel.TabIndex = 1;
+            // 
+            // ChildFormPanel
+            // 
+            this.ChildFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ChildFormPanel.Location = new System.Drawing.Point(0, 65);
+            this.ChildFormPanel.Name = "ChildFormPanel";
+            this.ChildFormPanel.Size = new System.Drawing.Size(882, 768);
+            this.ChildFormPanel.TabIndex = 1;
+            // 
+            // HeaderPanel
+            // 
+            this.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
+            this.HeaderPanel.Controls.Add(this.HeaderLabel);
+            this.HeaderPanel.Controls.Add(this.MenuButton);
+            this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.HeaderPanel.Name = "HeaderPanel";
+            this.HeaderPanel.Size = new System.Drawing.Size(882, 65);
+            this.HeaderPanel.TabIndex = 0;
+            // 
+            // HeaderLabel
+            // 
+            this.HeaderLabel.AutoSize = true;
+            this.HeaderLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.HeaderLabel.Location = new System.Drawing.Point(58, 12);
+            this.HeaderLabel.Name = "HeaderLabel";
+            this.HeaderLabel.Size = new System.Drawing.Size(151, 37);
+            this.HeaderLabel.TabIndex = 1;
+            this.HeaderLabel.Text = "Dashboard";
             // 
             // MenuButton
             // 
@@ -463,10 +463,10 @@ namespace SwiftInventory.Forms.Main
             this.MenuPanel.ResumeLayout(false);
             this.UserPicturePanel.ResumeLayout(false);
             this.UserPicturePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).EndInit();
             this.MainPanel.ResumeLayout(false);
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
