@@ -33,10 +33,10 @@
             this.UserCountLabel = new System.Windows.Forms.Label();
             this.ProductDetailsHeaderLabel = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ProductCountLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.CategoriesCountLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.CustomerCountLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,30 +45,30 @@
             this.SupplierCountLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.CategoriesCountLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ProductCountLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.OrdersCountLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.PurchaseOrdersCountLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.iconPictureBox7 = new FontAwesome.Sharp.IconPictureBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
             this.panel7.SuspendLayout();
@@ -144,58 +144,56 @@
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // panel2
+            // panel5
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.ProductCountLabel);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.iconPictureBox2);
-            this.panel2.Location = new System.Drawing.Point(330, 185);
-            this.panel2.Margin = new System.Windows.Forms.Padding(10);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 155);
-            this.panel2.TabIndex = 2;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.CategoriesCountLabel);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.iconPictureBox5);
+            this.panel5.Location = new System.Drawing.Point(330, 10);
+            this.panel5.Margin = new System.Windows.Forms.Padding(10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(300, 155);
+            this.panel5.TabIndex = 6;
+            this.panel5.Visible = false;
             // 
-            // ProductCountLabel
+            // CategoriesCountLabel
             // 
-            this.ProductCountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProductCountLabel.AutoSize = true;
-            this.ProductCountLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.ProductCountLabel.Location = new System.Drawing.Point(203, 38);
-            this.ProductCountLabel.Name = "ProductCountLabel";
-            this.ProductCountLabel.Size = new System.Drawing.Size(43, 49);
-            this.ProductCountLabel.TabIndex = 3;
-            this.ProductCountLabel.Text = "0";
+            this.CategoriesCountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CategoriesCountLabel.AutoSize = true;
+            this.CategoriesCountLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoriesCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.CategoriesCountLabel.Location = new System.Drawing.Point(203, 38);
+            this.CategoriesCountLabel.Name = "CategoriesCountLabel";
+            this.CategoriesCountLabel.Size = new System.Drawing.Size(43, 49);
+            this.CategoriesCountLabel.TabIndex = 3;
+            this.CategoriesCountLabel.Text = "0";
             // 
-            // label2
+            // label5
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(158, 110);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 32);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Products";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.label5.Location = new System.Drawing.Point(148, 110);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 32);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Categories";
             // 
-            // iconPictureBox2
+            // iconPictureBox5
             // 
-            this.iconPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Cubes;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 153;
-            this.iconPictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(154, 153);
-            this.iconPictureBox2.TabIndex = 0;
-            this.iconPictureBox2.TabStop = false;
+            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.ListUl;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 154;
+            this.iconPictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(154, 154);
+            this.iconPictureBox5.TabIndex = 0;
+            this.iconPictureBox5.TabStop = false;
             // 
             // panel3
             // 
@@ -300,56 +298,58 @@
             this.iconPictureBox4.TabIndex = 0;
             this.iconPictureBox4.TabStop = false;
             // 
-            // panel5
+            // panel2
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.CategoriesCountLabel);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.iconPictureBox5);
-            this.panel5.Location = new System.Drawing.Point(330, 10);
-            this.panel5.Margin = new System.Windows.Forms.Padding(10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(300, 155);
-            this.panel5.TabIndex = 6;
-            this.panel5.Visible = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.ProductCountLabel);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.iconPictureBox2);
+            this.panel2.Location = new System.Drawing.Point(330, 185);
+            this.panel2.Margin = new System.Windows.Forms.Padding(10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(300, 155);
+            this.panel2.TabIndex = 2;
             // 
-            // CategoriesCountLabel
+            // ProductCountLabel
             // 
-            this.CategoriesCountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CategoriesCountLabel.AutoSize = true;
-            this.CategoriesCountLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoriesCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.CategoriesCountLabel.Location = new System.Drawing.Point(203, 38);
-            this.CategoriesCountLabel.Name = "CategoriesCountLabel";
-            this.CategoriesCountLabel.Size = new System.Drawing.Size(43, 49);
-            this.CategoriesCountLabel.TabIndex = 3;
-            this.CategoriesCountLabel.Text = "0";
+            this.ProductCountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductCountLabel.AutoSize = true;
+            this.ProductCountLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.ProductCountLabel.Location = new System.Drawing.Point(203, 38);
+            this.ProductCountLabel.Name = "ProductCountLabel";
+            this.ProductCountLabel.Size = new System.Drawing.Size(43, 49);
+            this.ProductCountLabel.TabIndex = 3;
+            this.ProductCountLabel.Text = "0";
             // 
-            // label5
+            // label2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.label5.Location = new System.Drawing.Point(148, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 32);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Categories";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.label2.Location = new System.Drawing.Point(158, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 32);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Products";
             // 
-            // iconPictureBox5
+            // iconPictureBox2
             // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
-            this.iconPictureBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.ListUl;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 154;
-            this.iconPictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(154, 154);
-            this.iconPictureBox5.TabIndex = 0;
-            this.iconPictureBox5.TabStop = false;
+            this.iconPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(62)))), ((int)(((byte)(101)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Cubes;
+            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 153;
+            this.iconPictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(154, 153);
+            this.iconPictureBox2.TabIndex = 0;
+            this.iconPictureBox2.TabStop = false;
             // 
             // panel6
             // 
@@ -418,6 +418,18 @@
             this.panel7.Size = new System.Drawing.Size(300, 155);
             this.panel7.TabIndex = 8;
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.label8.Location = new System.Drawing.Point(177, 111);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 32);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Orders";
+            // 
             // PurchaseOrdersCountLabel
             // 
             this.PurchaseOrdersCountLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -455,18 +467,6 @@
             this.iconPictureBox7.TabIndex = 0;
             this.iconPictureBox7.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.label8.Location = new System.Drawing.Point(177, 111);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(88, 32);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Orders";
-            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -483,18 +483,18 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();

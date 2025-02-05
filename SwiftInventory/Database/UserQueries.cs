@@ -52,6 +52,31 @@ namespace SwiftInventory.Database
             }
         }
 
+        public static DataRow GetUser(string userName)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    SELECT 
+                        UserID AS ID,     
+                        UserName,
+                        Password,
+                        Email, 
+                        Role,
+                        Approved
+                    FROM [User]
+                    WHERE UserName = @UserName";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserName", userName);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable users = new DataTable();
+                    adapter.Fill(users);
+                    return users.Rows.Count > 0 ? users.Rows[0] : null;
+                }
+            }
+        }
+
         public static void ApproveUser(int userId)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
@@ -63,6 +88,24 @@ namespace SwiftInventory.Database
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserID", userId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static void AddUser(string userName, string password, string email, string role)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    INSERT INTO [User] (UserName, Password, Email, Role)
+                    VALUES (@UserName, @Password, @Email, @Role)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserName", userName);
+                    command.Parameters.AddWithValue("@Password", password);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Role", role);
                     command.ExecuteNonQuery();
                 }
             }

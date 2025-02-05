@@ -39,7 +39,22 @@ namespace SwiftInventory.Forms.Main.User
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (UserDataGridView.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show(this,
+                    "Are you sure you want to delete this user?",
+                    "Delete User",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+
+                    int userId = Convert.ToInt32(UserDataGridView.SelectedRows[0].Cells["ID"].Value);
+                    UserQueries.DeleteUser(userId);
+                    UserDataGridView.DataSource = UserQueries.GetUsers();
+                }
+            }
         }
     }
 }
