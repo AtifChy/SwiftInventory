@@ -1,4 +1,5 @@
 using SwiftInventory.Common;
+using SwiftInventory.Forms.Auth;
 using SwiftInventory.Forms.Common;
 using SwiftInventory.Forms.Main.Customer;
 using SwiftInventory.Forms.Main.Order;
@@ -137,7 +138,14 @@ namespace SwiftInventory.Forms.Main
 
         private void LogOutButton_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show(this, @"Are you sure you want to log out?", @"Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Hide();
+                var loginForm = new LoginForm();
+                loginForm.Show();
+                loginForm.Closed += (s, args) => Close();
+            }
         }
 
         private void LogOutButton_MouseEnter(object sender, EventArgs e)
