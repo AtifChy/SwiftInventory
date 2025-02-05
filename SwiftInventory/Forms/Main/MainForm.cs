@@ -39,8 +39,26 @@ namespace SwiftInventory.Forms.Main
             UserNameLabel.Text = UserSession.UserName;
             UserRoleLabel.Text = $@"({UserSession.Role})";
 
+            CenterUsernameAndRole();
+
             HighlightButton(DashboardButton);
             OpenChildForm(ChildFormPanel, new DashboardForm());
+        }
+
+        private void CenterUsernameAndRole()
+        {
+            foreach (Control ctrl in UserStatusPanel.Controls)
+            {
+                ctrl.Width = UserStatusPanel.ClientSize.Width - 20;
+
+                int horizontalMargin = (UserStatusPanel.ClientSize.Width - ctrl.Width) / 2;
+                if (horizontalMargin < 0)
+                {
+                    horizontalMargin = 0;
+                }
+
+                ctrl.Margin = new Padding(horizontalMargin, 0, horizontalMargin, 0);
+            }
         }
 
         private void DashboardButton_Click(object sender, EventArgs e)
