@@ -130,6 +130,7 @@ namespace SwiftInventory.Database
             int userId,
             string userName = null,
             string email = null,
+            string password = null,
             string role = null,
             bool? approved = null)
         {
@@ -150,6 +151,12 @@ namespace SwiftInventory.Database
                     {
                         updates.Add("Email = @Email");
                         command.Parameters.AddWithValue("@Email", email);
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(password))
+                    {
+                        updates.Add("Password = @Password");
+                        command.Parameters.AddWithValue("@Password", password);
                     }
 
                     if (!string.IsNullOrWhiteSpace(role))

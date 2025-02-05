@@ -168,8 +168,19 @@ namespace SwiftInventory.Forms.Main
             {
                 _activeButton.BackColor = Color.FromArgb(40, 39, 63);
             }
-            _activeButton = button;
-            _activeButton.BackColor = Color.FromArgb(63, 62, 101);
+
+            if (_activeButton != null && _activeButton.HasChildren)
+            {
+                _activeButton = button;
+                _activeButton.BackColor = Color.FromArgb(63, 62, 101);
+            }
+        }
+
+        private void UserPictureBox_Click(object sender, EventArgs e)
+        {
+            HighlightButton(null);
+            HeaderLabel.Text = @"Profile";
+            OpenChildForm(ChildFormPanel, new ProfileForm());
         }
     }
 }
