@@ -40,8 +40,8 @@
             this.CustomerNameLabel = new System.Windows.Forms.Label();
             this.FirstInfoViewControl = new SwiftInventory.CustomControls.InfoOrderControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.CloseButton = new SwiftInventory.CustomControls.RoundButton();
             this.SaveButton = new SwiftInventory.CustomControls.RoundButton();
+            this.CloseButton = new SwiftInventory.CustomControls.RoundButton();
             this.panel5.SuspendLayout();
             this.OrderFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,9 +64,9 @@
             this.ManageSupplierLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.ManageSupplierLabel.Location = new System.Drawing.Point(23, 11);
             this.ManageSupplierLabel.Name = "ManageSupplierLabel";
-            this.ManageSupplierLabel.Size = new System.Drawing.Size(126, 32);
+            this.ManageSupplierLabel.Size = new System.Drawing.Size(173, 32);
             this.ManageSupplierLabel.TabIndex = 1;
-            this.ManageSupplierLabel.Text = "Order Info";
+            this.ManageSupplierLabel.Text = "Edit Order Info";
             // 
             // OrderFlowLayoutPanel
             // 
@@ -183,25 +183,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(907, 58);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CloseButton.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.CloseButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.CloseButton.BorderRadius = 5;
-            this.CloseButton.BorderSize = 0;
-            this.CloseButton.FlatAppearance.BorderSize = 0;
-            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CloseButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.Color.Black;
-            this.CloseButton.Location = new System.Drawing.Point(720, 9);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(130, 40);
-            this.CloseButton.TabIndex = 1;
-            this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = false;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
             // SaveButton
             // 
             this.SaveButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -220,6 +201,25 @@
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CloseButton.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.CloseButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.CloseButton.BorderRadius = 5;
+            this.CloseButton.BorderSize = 0;
+            this.CloseButton.FlatAppearance.BorderSize = 0;
+            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.ForeColor = System.Drawing.Color.Black;
+            this.CloseButton.Location = new System.Drawing.Point(720, 9);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(130, 40);
+            this.CloseButton.TabIndex = 1;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // EditOrderForm
             // 

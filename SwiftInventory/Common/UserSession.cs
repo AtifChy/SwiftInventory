@@ -1,5 +1,12 @@
 ﻿namespace SwiftInventory.Common
 {
+    public enum Role
+    {
+        Admin,
+        Manager,
+        Salesman
+    }
+
     internal static class UserSession
     {
         public static int UserId { get; set; }

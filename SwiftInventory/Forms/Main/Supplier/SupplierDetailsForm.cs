@@ -8,7 +8,7 @@ namespace SwiftInventory.Forms.Main.Supplier
     public partial class SupplierDetailsForm : BaseForm
     {
         private readonly int? _supplierId;
-        private bool editable;
+        private readonly bool _editable;
 
         public SupplierDetailsForm()
         {
@@ -19,14 +19,14 @@ namespace SwiftInventory.Forms.Main.Supplier
         {
             InitializeComponent();
             _supplierId = supplierId;
-            this.editable = editable;
+            _editable = editable;
         }
         private void SupplierDetailsForm_Load(object sender, EventArgs e)
         {
             if (_supplierId.HasValue)
             {
 
-                if (!editable)
+                if (!_editable)
                 {
                     SupplierDetailsHeaderLabel.Text = @"Supplier Details";
                     SaveButton.Visible = false;

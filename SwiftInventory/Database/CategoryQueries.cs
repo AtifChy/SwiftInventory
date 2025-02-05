@@ -32,7 +32,7 @@ namespace SwiftInventory.Database
                 const string query = @"
                     SELECT 
                         CategoryID AS ID,
-                        CategoryName AS 'Category Name'
+                        CategoryName AS [Category Name]
                     FROM Category
                     WHERE CategoryID = @CategoryID";
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -90,6 +90,19 @@ namespace SwiftInventory.Database
                 {
                     command.Parameters.AddWithValue("@CategoryID", categoryId);
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static int GetCategoryCount()
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    SELECT COUNT(CategoryID) FROM Category";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    return (int)command.ExecuteScalar();
                 }
             }
         }

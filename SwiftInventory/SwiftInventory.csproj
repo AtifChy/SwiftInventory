@@ -72,7 +72,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\OrderProduct.cs" />
+    <Compile Include="Common\Product.cs" />
     <Compile Include="Common\UserSession.cs" />
     <Compile Include="CustomControls\OrderControl.cs">
       <SubType>UserControl</SubType>
@@ -97,7 +97,9 @@
     <Compile Include="Database\DatabaseConfig.cs" />
     <Compile Include="Database\OrderQueries.cs" />
     <Compile Include="Database\ProductQueries.cs" />
+    <Compile Include="Database\PurchaseOrderQueries.cs" />
     <Compile Include="Database\SupplierQueries.cs" />
+    <Compile Include="Database\UserQueries.cs" />
     <Compile Include="Forms\Auth\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +123,24 @@
     </Compile>
     <Compile Include="Forms\Main\CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerDetailsForm.Designer.cs">
+      <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\ManageCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\Customer\ManageCustomerForm.Designer.cs">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Main\DashboardForm.cs">
       <SubType>Form</SubType>
@@ -176,6 +196,30 @@
     <Compile Include="Forms\Main\Product\ManageProductForm.Designer.cs">
       <DependentUpon>ManageProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\EditPurchaseOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\EditPurchaseOrderForm.Designer.cs">
+      <DependentUpon>EditPurchaseOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\InfoPurchaseOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\InfoPurchaseOrderForm.Designer.cs">
+      <DependentUpon>InfoPurchaseOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\ManagePurchaseOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\ManagePurchaseOrderForm.Designer.cs">
+      <DependentUpon>ManagePurchaseOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\PurchaseOrderProductListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\PurchaseOrder\PurchaseOrderProductListForm.Designer.cs">
+      <DependentUpon>PurchaseOrderProductListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main\PurchaseOrder\PurchaseOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +244,24 @@
     <Compile Include="Forms\Main\Supplier\SupplierForm.Designer.cs">
       <DependentUpon>SupplierForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\User\EditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\User\EditUserForm.Designer.cs">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\User\ManageUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\User\ManageUserForm.Designer.cs">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\User\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\User\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomControls\OrderControl.resx">
@@ -213,6 +275,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Customer\CustomerDetailsForm.resx">
+      <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Customer\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\Customer\ManageCustomerForm.resx">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
@@ -241,6 +312,18 @@
     <EmbeddedResource Include="Forms\Main\Product\ProductDetailsForm.resx">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\PurchaseOrder\EditPurchaseOrderForm.resx">
+      <DependentUpon>EditPurchaseOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\PurchaseOrder\InfoPurchaseOrderForm.resx">
+      <DependentUpon>InfoPurchaseOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\PurchaseOrder\ManagePurchaseOrderForm.resx">
+      <DependentUpon>ManagePurchaseOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\PurchaseOrder\PurchaseOrderProductListForm.resx">
+      <DependentUpon>PurchaseOrderProductListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\PurchaseOrder\PurchaseOrderForm.resx">
       <DependentUpon>PurchaseOrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +335,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\Supplier\SupplierForm.resx">
       <DependentUpon>SupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\User\EditUserForm.resx">
+      <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\User\ManageUserForm.resx">
+      <DependentUpon>ManageUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\User\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

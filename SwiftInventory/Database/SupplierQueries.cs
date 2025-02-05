@@ -5,7 +5,7 @@ namespace SwiftInventory.Database
 {
     internal static class SupplierQueries
     {
-        public static DataTable GetAllSuppliers()
+        public static DataTable GetSuppliers()
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
@@ -103,6 +103,19 @@ namespace SwiftInventory.Database
                 }
             }
             return true;
+        }
+
+        public static int GetSupplierCount()
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    SELECT COUNT(SupplierID) FROM Supplier";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    return (int)command.ExecuteScalar();
+                }
+            }
         }
     }
 }

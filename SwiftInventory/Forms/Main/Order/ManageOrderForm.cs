@@ -40,8 +40,31 @@ namespace SwiftInventory.Forms.Main.Order
             if (OrderDataGridView.SelectedRows.Count > 0)
             {
                 int orderId = Convert.ToInt32(OrderDataGridView.SelectedRows[0].Cells["ID"].Value);
-                OrderQueries.DeleteOrder(orderId);
-                OrderDataGridView.DataSource = OrderQueries.GetOrders();
+
+                if (OrderQueries.IsOrderPaymentStatusPaid(orderId))
+                {
+                    MessageBox.Show("Payment completed. Can't be deleted.");
+                    return;
+                }
+
+                DialogResult result = MessageBox.Show(
+                    this,
+                    "Are you sure you want to delete this order?",
+                    "Delete Order",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    var orderProducts = OrderQueries.GetOrderDetails(orderId);
+                    foreach (var orderProduct in orderProducts)
+                    {
+                        ProductQueries.UpdateProductQuantity(orderProduct.ProductId, +orderProduct.Quantity);
+                    }
+
+                    OrderQueries.DeleteOrder(orderId);
+                    OrderDataGridView.DataSource = OrderQueries.GetOrders();
+                }
             }
         }
 

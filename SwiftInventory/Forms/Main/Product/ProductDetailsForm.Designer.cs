@@ -31,7 +31,6 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.UploadImageButton = new SwiftInventory.CustomControls.RoundButton();
-            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SupplierComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,11 +48,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.ProductDetailsHeaderLabel = new System.Windows.Forms.Label();
             this.ProductImageFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.MainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -100,7 +100,7 @@
             this.UploadImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UploadImageButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UploadImageButton.ForeColor = System.Drawing.Color.Black;
-            this.UploadImageButton.Location = new System.Drawing.Point(170, 476);
+            this.UploadImageButton.Location = new System.Drawing.Point(172, 449);
             this.UploadImageButton.Name = "UploadImageButton";
             this.UploadImageButton.Size = new System.Drawing.Size(130, 40);
             this.UploadImageButton.TabIndex = 12;
@@ -108,23 +108,12 @@
             this.UploadImageButton.UseVisualStyleBackColor = false;
             this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
             // 
-            // ProductPictureBox
-            // 
-            this.ProductPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProductPictureBox.Image = global::SwiftInventory.Properties.Resources.icons8_picture_80;
-            this.ProductPictureBox.Location = new System.Drawing.Point(170, 336);
-            this.ProductPictureBox.Name = "ProductPictureBox";
-            this.ProductPictureBox.Size = new System.Drawing.Size(130, 134);
-            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProductPictureBox.TabIndex = 11;
-            this.ProductPictureBox.TabStop = false;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(166, 309);
+            this.label4.Location = new System.Drawing.Point(168, 282);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 24);
             this.label4.TabIndex = 10;
@@ -136,7 +125,7 @@
             this.SupplierComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SupplierComboBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
             this.SupplierComboBox.FormattingEnabled = true;
-            this.SupplierComboBox.Location = new System.Drawing.Point(600, 172);
+            this.SupplierComboBox.Location = new System.Drawing.Point(602, 145);
             this.SupplierComboBox.Name = "SupplierComboBox";
             this.SupplierComboBox.Size = new System.Drawing.Size(195, 35);
             this.SupplierComboBox.TabIndex = 9;
@@ -146,7 +135,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(596, 145);
+            this.label5.Location = new System.Drawing.Point(598, 118);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 24);
             this.label5.TabIndex = 8;
@@ -156,7 +145,7 @@
             // 
             this.PriceTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PriceTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.PriceTextBox.Location = new System.Drawing.Point(600, 254);
+            this.PriceTextBox.Location = new System.Drawing.Point(602, 227);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(195, 34);
             this.PriceTextBox.TabIndex = 7;
@@ -166,7 +155,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(596, 227);
+            this.label6.Location = new System.Drawing.Point(598, 200);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 24);
             this.label6.TabIndex = 6;
@@ -176,7 +165,7 @@
             // 
             this.QuantityTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.QuantityTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.QuantityTextBox.Location = new System.Drawing.Point(170, 254);
+            this.QuantityTextBox.Location = new System.Drawing.Point(172, 227);
             this.QuantityTextBox.Name = "QuantityTextBox";
             this.QuantityTextBox.Size = new System.Drawing.Size(195, 34);
             this.QuantityTextBox.TabIndex = 5;
@@ -186,7 +175,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(166, 227);
+            this.label3.Location = new System.Drawing.Point(168, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 24);
             this.label3.TabIndex = 4;
@@ -198,7 +187,7 @@
             this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryComboBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
             this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Location = new System.Drawing.Point(170, 172);
+            this.CategoryComboBox.Location = new System.Drawing.Point(172, 145);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(195, 35);
             this.CategoryComboBox.TabIndex = 3;
@@ -208,7 +197,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(166, 145);
+            this.label2.Location = new System.Drawing.Point(168, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 24);
             this.label2.TabIndex = 2;
@@ -218,7 +207,7 @@
             // 
             this.NameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameTextBox.Location = new System.Drawing.Point(170, 98);
+            this.NameTextBox.Location = new System.Drawing.Point(172, 71);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(624, 34);
             this.NameTextBox.TabIndex = 1;
@@ -228,7 +217,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 71);
+            this.label1.Location = new System.Drawing.Point(168, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 24);
             this.label1.TabIndex = 0;
@@ -314,6 +303,17 @@
             // 
             this.ProductImageFileDialog.FileName = "ProductImage";
             // 
+            // ProductPictureBox
+            // 
+            this.ProductPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductPictureBox.Image = global::SwiftInventory.Properties.Resources.icons8_picture_80;
+            this.ProductPictureBox.Location = new System.Drawing.Point(172, 309);
+            this.ProductPictureBox.Name = "ProductPictureBox";
+            this.ProductPictureBox.Size = new System.Drawing.Size(130, 134);
+            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPictureBox.TabIndex = 11;
+            this.ProductPictureBox.TabStop = false;
+            // 
             // ProductDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -330,10 +330,10 @@
             this.MainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

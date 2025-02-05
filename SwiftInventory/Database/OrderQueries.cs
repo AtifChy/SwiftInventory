@@ -59,7 +59,7 @@ namespace SwiftInventory.Database
             }
         }
 
-        public static List<OrderProduct> GetOrderDetails(int orderId)
+        public static List<Product> GetOrderDetails(int orderId)
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
@@ -73,33 +73,25 @@ namespace SwiftInventory.Database
                     FROM OrderDetails
                     INNER JOIN Product ON OrderDetails.ProductID = Product.ProductID
                     WHERE OrderDetails.OrderID = @OrderID";
-                try
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    command.Parameters.AddWithValue("@OrderID", orderId);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable orderDetails = new DataTable();
+                    adapter.Fill(orderDetails);
+                    return orderDetails.AsEnumerable().Select(row => new Product
                     {
-                        command.Parameters.AddWithValue("@OrderID", orderId);
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        DataTable orderDetails = new DataTable();
-                        adapter.Fill(orderDetails);
-                        return orderDetails.AsEnumerable().Select(row => new OrderProduct
-                        {
-                            ProductId = row.Field<int>("ID"),
-                            ProductName = row.Field<string>("Product Name"),
-                            Quantity = row.Field<int>("Quantity"),
-                            Subtotal = row.Field<decimal>("Subtotal"),
-                            ProductImage = row.Field<string>("Image")
-                        }).ToList();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    throw;
+                        ProductId = row.Field<int>("ID"),
+                        ProductName = row.Field<string>("Product Name"),
+                        Quantity = row.Field<int>("Quantity"),
+                        Subtotal = row.Field<decimal>("Subtotal"),
+                        ProductImage = row.Field<string>("Image")
+                    }).ToList();
                 }
             }
         }
 
-        public static void AddOrder(int customerId, List<OrderProduct> productDetails)
+        public static void AddOrder(int customerId, List<Product> productDetails)
         {
             int userId = UserSession.UserId;
 
@@ -123,7 +115,7 @@ namespace SwiftInventory.Database
             }
         }
 
-        private static int InsertOrder(SqlConnection connection, SqlTransaction transaction, int customerId, int userId, List<OrderProduct> productDetails)
+        private static int InsertOrder(SqlConnection connection, SqlTransaction transaction, int customerId, int userId, List<Product> productDetails)
         {
             decimal totalAmount = productDetails.Sum(p => p.Quantity * p.PricePerUnit);
 
@@ -142,7 +134,7 @@ namespace SwiftInventory.Database
             }
         }
 
-        private static void InsertOrderDetails(SqlConnection connection, SqlTransaction transaction, int orderId, List<OrderProduct> productDetails)
+        private static void InsertOrderDetails(SqlConnection connection, SqlTransaction transaction, int orderId, List<Product> productDetails)
         {
             const string orderDetailQuery = @"
                 INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Subtotal)
@@ -192,6 +184,35 @@ namespace SwiftInventory.Database
                 {
                     command.Parameters.AddWithValue("@OrderID", orderId);
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static bool IsOrderPaymentStatusPaid(int orderId)
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = @"
+                    SELECT PaymentStatus 
+                    FROM [Order]
+                    WHERE OrderID = @OrderID
+                    AND PaymentStatus = 'Paid'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@OrderID", orderId);
+                    return command.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public static int GetOrderCount()
+        {
+            using (SqlConnection connection = DatabaseConfig.GetConnection())
+            {
+                const string query = "SELECT COUNT(OrderID) FROM [Order]";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    return (int)command.ExecuteScalar();
                 }
             }
         }

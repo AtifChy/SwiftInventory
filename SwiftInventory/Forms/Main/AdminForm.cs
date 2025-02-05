@@ -1,7 +1,10 @@
 using SwiftInventory.Forms.Common;
+using SwiftInventory.Forms.Main.Customer;
 using SwiftInventory.Forms.Main.Order;
 using SwiftInventory.Forms.Main.Product;
+using SwiftInventory.Forms.Main.PurchaseOrder;
 using SwiftInventory.Forms.Main.Supplier;
+using SwiftInventory.Forms.Main.User;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -48,6 +51,7 @@ namespace SwiftInventory.Forms.Main
         {
             HighlightButton(CustomerButton);
             HeaderLabel.Text = @"Customer";
+            OpenChildForm(ChildFormPanel, new CustomerForm());
         }
 
         private void SupplierButton_Click(object sender, EventArgs e)
@@ -74,6 +78,14 @@ namespace SwiftInventory.Forms.Main
         {
             HighlightButton(PurchaseOrderButton);
             HeaderLabel.Text = @"Purchase Order";
+            OpenChildForm(ChildFormPanel, new PurchaseOrderForm());
+        }
+
+        private void SystemUsersButton_Click(object sender, EventArgs e)
+        {
+            HighlightButton(SystemUsersButton);
+            HeaderLabel.Text = @"System Users";
+            OpenChildForm(ChildFormPanel, new UserForm());
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
@@ -116,6 +128,5 @@ namespace SwiftInventory.Forms.Main
             _activeButton = button;
             _activeButton.BackColor = Color.FromArgb(63, 62, 101);
         }
-
     }
 }

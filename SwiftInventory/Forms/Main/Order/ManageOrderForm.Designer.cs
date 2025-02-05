@@ -61,9 +61,9 @@
             this.ManageSupplierLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.ManageSupplierLabel.Location = new System.Drawing.Point(23, 11);
             this.ManageSupplierLabel.Name = "ManageSupplierLabel";
-            this.ManageSupplierLabel.Size = new System.Drawing.Size(182, 32);
+            this.ManageSupplierLabel.Size = new System.Drawing.Size(170, 32);
             this.ManageSupplierLabel.TabIndex = 1;
-            this.ManageSupplierLabel.Text = "Pending Orders";
+            this.ManageSupplierLabel.Text = "Review Orders";
             // 
             // tableLayoutPanel1
             // 

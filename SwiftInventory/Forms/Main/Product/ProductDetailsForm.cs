@@ -7,34 +7,41 @@ namespace SwiftInventory.Forms.Main.Product
     public partial class ProductDetailsForm : BaseForm
     {
         private readonly int? _productId;
+        private string _productName;
+        private decimal _pricePerUnit;
+        private int _quantity;
+        private int _categoryId;
+        private int _supplierId;
+        private string _image;
 
         public ProductDetailsForm()
         {
             InitializeComponent();
         }
 
-        public ProductDetailsForm(int? productId)
+        public ProductDetailsForm(int productId)
         {
-            _productId = productId;
             InitializeComponent();
+            _productId = productId;
+            ProductQueries.GetProduct(_productId.Value, out _productName, out _pricePerUnit, out _quantity, out _categoryId, out _supplierId, out _image);
         }
 
         private void ProductDetailsForm_Load(object sender, System.EventArgs e)
         {
             if (_productId.HasValue)
             {
-                Text = @"Edit Product";
+                ProductDetailsHeaderLabel.Text = @"Edit Product";
                 SaveButton.Text = @"Update";
-                /*ProductPictureBox.ImageLocation = ProductQueries.GetProductImage(_productId.Value);
-                ProductNameTextBox.Text = ProductQueries.GetProductName(_productId.Value);
-                PriceTextBox.Text = ProductQueries.GetProductPrice(_productId.Value).ToString();
-                QuantityTextBox.Text = ProductQueries.GetProductQuantity(_productId.Value).ToString();
-                CategoryComboBox.SelectedValue = ProductQueries.GetProductCategory(_productId.Value);
-                SupplierComboBox.SelectedValue = ProductQueries.GetProductSupplier(_productId.Value);*/
+                NameTextBox.Text = _productName;
+                CategoryComboBox.SelectedValue = _categoryId;
+                SupplierComboBox.SelectedValue = _supplierId;
+                QuantityTextBox.Text = _quantity.ToString();
+                PriceTextBox.Text = _pricePerUnit.ToString();
+                ProductPictureBox.ImageLocation = _image;
             }
             else
             {
-                Text = @"Add Product";
+                ProductDetailsHeaderLabel.Text = @"Add Product";
                 SaveButton.Text = @"Save";
             }
             PopulateCategoryComboBox();
@@ -50,7 +57,7 @@ namespace SwiftInventory.Forms.Main.Product
 
         private void PopulateSupplierComboBox()
         {
-            SupplierComboBox.DataSource = SupplierQueries.GetAllSuppliers();
+            SupplierComboBox.DataSource = SupplierQueries.GetSuppliers();
             SupplierComboBox.DisplayMember = "Name";
             SupplierComboBox.ValueMember = "ID";
         }
@@ -84,13 +91,23 @@ namespace SwiftInventory.Forms.Main.Product
 
             if (string.IsNullOrWhiteSpace(productName) || string.IsNullOrWhiteSpace(pricePerUnit) || string.IsNullOrWhiteSpace(quantity))
             {
-                MessageBox.Show(@"Product name cannot be empty.");
+                MessageBox.Show(this, @"Please fill in all fields.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            ProductQueries.AddProduct(productName, decimal.Parse(pricePerUnit), int.Parse(quantity), categoryId, supplierId, image);
-            MessageBox.Show(@"Product added successfully.");
-            OpenChildForm(Parent as Panel, new ManageProductForm());
+            if (!_productId.HasValue)
+            {
+                ProductQueries.AddProduct(productName, decimal.Parse(pricePerUnit), int.Parse(quantity), categoryId,
+                    supplierId, image);
+                MessageBox.Show(@"Product added successfully.");
+                OpenChildForm(Parent as Panel, new ManageProductForm());
+            }
+            else
+            {
+                ProductQueries.UpdateProduct(_productId.Value, productName, decimal.Parse(pricePerUnit), int.Parse(quantity), categoryId, supplierId, image);
+                MessageBox.Show(@"Product updated successfully.");
+                OpenChildForm(Parent as Panel, new ManageProductForm());
+            }
         }
     }
 }

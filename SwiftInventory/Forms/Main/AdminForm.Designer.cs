@@ -33,6 +33,7 @@ namespace SwiftInventory.Forms.Main
         {
             this.MainTable = new System.Windows.Forms.TableLayoutPanel();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.SystemUsersButton = new FontAwesome.Sharp.IconButton();
             this.LogOutButton = new FontAwesome.Sharp.IconButton();
             this.PurchaseOrderButton = new FontAwesome.Sharp.IconButton();
             this.OrderButton = new FontAwesome.Sharp.IconButton();
@@ -72,13 +73,14 @@ namespace SwiftInventory.Forms.Main
             this.MainTable.Name = "MainTable";
             this.MainTable.RowCount = 1;
             this.MainTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.MainTable.Size = new System.Drawing.Size(1157, 801);
+            this.MainTable.Size = new System.Drawing.Size(1182, 833);
             this.MainTable.TabIndex = 0;
             // 
             // MenuPanel
             // 
             this.MenuPanel.AutoScroll = true;
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.MenuPanel.Controls.Add(this.SystemUsersButton);
             this.MenuPanel.Controls.Add(this.LogOutButton);
             this.MenuPanel.Controls.Add(this.PurchaseOrderButton);
             this.MenuPanel.Controls.Add(this.OrderButton);
@@ -94,9 +96,33 @@ namespace SwiftInventory.Forms.Main
             this.MenuPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 20);
-            this.MenuPanel.Size = new System.Drawing.Size(300, 801);
+            this.MenuPanel.Size = new System.Drawing.Size(300, 833);
             this.MenuPanel.TabIndex = 0;
             this.MenuPanel.VisibleChanged += new System.EventHandler(this.MenuPanel_VisibleChanged);
+            // 
+            // SystemUsersButton
+            // 
+            this.SystemUsersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(39)))), ((int)(((byte)(63)))));
+            this.SystemUsersButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.SystemUsersButton.FlatAppearance.BorderSize = 0;
+            this.SystemUsersButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(56)))), ((int)(((byte)(87)))));
+            this.SystemUsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SystemUsersButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SystemUsersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.SystemUsersButton.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.SystemUsersButton.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.SystemUsersButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SystemUsersButton.IconSize = 28;
+            this.SystemUsersButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.SystemUsersButton.Location = new System.Drawing.Point(0, 608);
+            this.SystemUsersButton.Name = "SystemUsersButton";
+            this.SystemUsersButton.Size = new System.Drawing.Size(300, 54);
+            this.SystemUsersButton.TabIndex = 10;
+            this.SystemUsersButton.Text = "System Users";
+            this.SystemUsersButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.SystemUsersButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.SystemUsersButton.UseVisualStyleBackColor = false;
+            this.SystemUsersButton.Click += new System.EventHandler(this.SystemUsersButton_Click);
             // 
             // LogOutButton
             // 
@@ -111,7 +137,7 @@ namespace SwiftInventory.Forms.Main
             this.LogOutButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.LogOutButton.IconSize = 28;
             this.LogOutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LogOutButton.Location = new System.Drawing.Point(0, 727);
+            this.LogOutButton.Location = new System.Drawing.Point(0, 759);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(300, 54);
             this.LogOutButton.TabIndex = 9;
@@ -193,6 +219,7 @@ namespace SwiftInventory.Forms.Main
             this.SalesButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SalesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.SalesButton.UseVisualStyleBackColor = false;
+            this.SalesButton.Visible = false;
             this.SalesButton.Click += new System.EventHandler(this.SalesButton_Click);
             // 
             // SupplierButton
@@ -356,7 +383,7 @@ namespace SwiftInventory.Forms.Main
             this.MainPanel.Location = new System.Drawing.Point(300, 0);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(857, 801);
+            this.MainPanel.Size = new System.Drawing.Size(882, 833);
             this.MainPanel.TabIndex = 1;
             // 
             // ChildFormPanel
@@ -364,7 +391,7 @@ namespace SwiftInventory.Forms.Main
             this.ChildFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ChildFormPanel.Location = new System.Drawing.Point(0, 65);
             this.ChildFormPanel.Name = "ChildFormPanel";
-            this.ChildFormPanel.Size = new System.Drawing.Size(857, 736);
+            this.ChildFormPanel.Size = new System.Drawing.Size(882, 768);
             this.ChildFormPanel.TabIndex = 1;
             // 
             // HeaderPanel
@@ -376,7 +403,7 @@ namespace SwiftInventory.Forms.Main
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Margin = new System.Windows.Forms.Padding(0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(857, 65);
+            this.HeaderPanel.Size = new System.Drawing.Size(882, 65);
             this.HeaderPanel.TabIndex = 0;
             // 
             // HeaderLabel
@@ -412,7 +439,7 @@ namespace SwiftInventory.Forms.Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 801);
+            this.ClientSize = new System.Drawing.Size(1182, 833);
             this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AdminForm";
@@ -451,5 +478,6 @@ namespace SwiftInventory.Forms.Main
         private FontAwesome.Sharp.IconButton OrderButton;
         private FontAwesome.Sharp.IconButton PurchaseOrderButton;
         private FontAwesome.Sharp.IconButton LogOutButton;
+        private FontAwesome.Sharp.IconButton SystemUsersButton;
     }
 }

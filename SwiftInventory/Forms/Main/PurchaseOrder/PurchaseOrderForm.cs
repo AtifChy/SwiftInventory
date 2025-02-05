@@ -1,7 +1,8 @@
 ﻿using SwiftInventory.Forms.Common;
+using SwiftInventory.Forms.Main.Order;
 using System;
 
-namespace SwiftInventory.Forms.Main.Order
+namespace SwiftInventory.Forms.Main.PurchaseOrder
 {
     public partial class PurchaseOrderForm : BaseForm
     {
@@ -12,7 +13,7 @@ namespace SwiftInventory.Forms.Main.Order
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(ChildFormPanel, new ManageOrderForm());
+            OpenChildForm(ChildFormPanel, new ManagePurchaseOrderForm());
         }
     }
 }

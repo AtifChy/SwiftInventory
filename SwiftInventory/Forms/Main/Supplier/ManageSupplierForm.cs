@@ -21,7 +21,7 @@ namespace SwiftInventory.Forms.Main.Supplier
 
         private void ManageSupplierForm_Load(object sender, EventArgs e)
         {
-            SupplierDataGridView.DataSource = SupplierQueries.GetAllSuppliers();
+            SupplierDataGridView.DataSource = SupplierQueries.GetSuppliers();
             SupplierDataGridView.ColumnHeadersDefaultCellStyle.Font =
                 new Font("Segoe UI Variable Display Semib", 9.5F, FontStyle.Regular);
             SupplierDataGridView.DefaultCellStyle.Font =
@@ -40,7 +40,7 @@ namespace SwiftInventory.Forms.Main.Supplier
             if (SupplierQueries.DeleteSupplier(id))
             {
                 MessageBox.Show(@"Supplier deleted successfully.");
-                SupplierDataGridView.DataSource = SupplierQueries.GetAllSuppliers();
+                SupplierDataGridView.DataSource = SupplierQueries.GetSuppliers();
             }
             else
             {

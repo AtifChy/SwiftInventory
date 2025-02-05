@@ -37,7 +37,6 @@
             this.AddButton = new SwiftInventory.CustomControls.RoundButton();
             this.DeleteButton = new SwiftInventory.CustomControls.RoundButton();
             this.EditButton = new SwiftInventory.CustomControls.RoundButton();
-            this.ViewButton = new SwiftInventory.CustomControls.RoundButton();
             this.ProductDataGridView = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.SearchTextBox = new SwiftInventory.CustomControls.PlaceholderTextBox();
@@ -78,10 +77,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.AddButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DeleteButton, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.EditButton, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ViewButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.AddButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.EditButton, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 605);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -102,7 +100,7 @@
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddButton.ForeColor = System.Drawing.Color.Black;
-            this.AddButton.Location = new System.Drawing.Point(278, 9);
+            this.AddButton.Location = new System.Drawing.Point(56, 9);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(130, 40);
             this.AddButton.TabIndex = 5;
@@ -140,31 +138,13 @@
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditButton.ForeColor = System.Drawing.Color.Black;
-            this.EditButton.Location = new System.Drawing.Point(500, 9);
+            this.EditButton.Location = new System.Drawing.Point(278, 9);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(130, 40);
             this.EditButton.TabIndex = 0;
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // ViewButton
-            // 
-            this.ViewButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ViewButton.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ViewButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.ViewButton.BorderRadius = 5;
-            this.ViewButton.BorderSize = 0;
-            this.ViewButton.FlatAppearance.BorderSize = 0;
-            this.ViewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewButton.ForeColor = System.Drawing.Color.Black;
-            this.ViewButton.Location = new System.Drawing.Point(56, 9);
-            this.ViewButton.Name = "ViewButton";
-            this.ViewButton.Size = new System.Drawing.Size(130, 40);
-            this.ViewButton.TabIndex = 4;
-            this.ViewButton.Text = "View";
-            this.ViewButton.UseVisualStyleBackColor = false;
             // 
             // ProductDataGridView
             // 
@@ -277,7 +257,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CustomControls.RoundButton DeleteButton;
         private CustomControls.RoundButton EditButton;
-        private CustomControls.RoundButton ViewButton;
         private System.Windows.Forms.DataGridView ProductDataGridView;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label ManageCategoryLabel;

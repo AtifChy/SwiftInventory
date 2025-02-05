@@ -76,7 +76,15 @@ namespace SwiftInventory.CustomControls
         public override string Text
         {
             get => _isPlaceholderActive ? string.Empty : base.Text;
-            set => base.Text = value;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value != _placeholder)
+                {
+                    _isPlaceholderActive = false;
+                    ForeColor = _originalForeColor;
+                }
+                base.Text = value;
+            }
         }
     }
 }

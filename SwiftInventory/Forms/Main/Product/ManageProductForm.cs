@@ -35,7 +35,11 @@ namespace SwiftInventory.Forms.Main.Product
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-
+            if (ProductDataGridView.SelectedRows.Count > 0)
+            {
+                int productId = Convert.ToInt32(ProductDataGridView.SelectedRows[0].Cells["ID"].Value);
+                OpenChildForm(Parent as Panel, new ProductDetailsForm(productId));
+            }
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)

@@ -1,5 +1,4 @@
-﻿using SwiftInventory.Common;
-using SwiftInventory.CustomControls;
+﻿using SwiftInventory.CustomControls;
 using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
 using System;
@@ -20,7 +19,7 @@ namespace SwiftInventory.Forms.Main.Order
             _productsDataTable.PrimaryKey = new[] { _productsDataTable.Columns["ID"] };
         }
 
-        private void AddButton_Click(object sender, System.EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             var orderControl = new OrderControl();
             LoadProducts(orderControl);
@@ -78,7 +77,15 @@ namespace SwiftInventory.Forms.Main.Order
                 return;
             }
 
-            OrderQueries.AddOrder((int)CustomerComboBox.SelectedValue, GetOrderProducts());
+            var orderProducts = GetOrderProducts();
+            OrderQueries.AddOrder((int)CustomerComboBox.SelectedValue, orderProducts);
+
+            // Update product quantities
+            foreach (var orderProduct in orderProducts)
+            {
+                ProductQueries.UpdateProductQuantity(orderProduct.ProductId, -orderProduct.Quantity);
+            }
+
             MessageBox.Show(this, @"Order added successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             OpenChildForm(Parent as Panel, new ManageOrderForm());
         }
@@ -88,9 +95,9 @@ namespace SwiftInventory.Forms.Main.Order
             OpenChildForm(Parent as Panel, new ManageOrderForm());
         }
 
-        private List<OrderProduct> GetOrderProducts()
+        private List<SwiftInventory.Common.Product> GetOrderProducts()
         {
-            var orderProducts = new List<OrderProduct>();
+            var orderProducts = new List<SwiftInventory.Common.Product>();
 
             foreach (Control ctrl in OrderFlowLayoutPanel.Controls)
             {
@@ -106,7 +113,20 @@ namespace SwiftInventory.Forms.Main.Order
                     return null;
                 }
 
-                orderProducts.Add(new OrderProduct
+                // check stock availability
+                if (!ProductQueries.CheckProductQuantity(productId, quantity))
+                {
+                    MessageBox.Show(
+                        this,
+                        @"The quantity is greater than the available stock for the selected product.",
+                        @"Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+
+                    return null;
+                }
+
+                orderProducts.Add(new SwiftInventory.Common.Product
                 {
                     ProductId = productId,
                     Quantity = quantity,

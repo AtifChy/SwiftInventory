@@ -1,5 +1,4 @@
-﻿using SwiftInventory.Common;
-using SwiftInventory.CustomControls;
+﻿using SwiftInventory.CustomControls;
 using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
 using System;
@@ -14,7 +13,7 @@ namespace SwiftInventory.Forms.Main.Order
         private readonly string _customerName;
         private readonly decimal _totalAmount;
         private readonly string _paymentStatus;
-        private readonly List<OrderProduct> _orderProducts;
+        private readonly List<SwiftInventory.Common.Product> _orderProducts;
 
         public EditOrderForm(int orderId)
         {

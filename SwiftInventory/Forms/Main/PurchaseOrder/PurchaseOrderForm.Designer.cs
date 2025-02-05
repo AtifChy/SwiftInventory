@@ -1,4 +1,4 @@
-﻿namespace SwiftInventory.Forms.Main.Order
+﻿namespace SwiftInventory.Forms.Main.PurchaseOrder
 {
     partial class PurchaseOrderForm
     {
