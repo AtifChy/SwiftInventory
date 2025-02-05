@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.SaveButton = new SwiftInventory.CustomControls.RoundButton();
-            this.CancelButton = new SwiftInventory.CustomControls.RoundButton();
+            this.CustomCancelButton = new SwiftInventory.CustomControls.RoundButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.SupplierDetailsHeaderLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -128,7 +128,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.SaveButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.CancelButton, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.CustomCancelButton, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 658);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -159,22 +159,23 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.CancelButton.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.CancelButton.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.CancelButton.BorderRadius = 5;
-            this.CancelButton.BorderSize = 0;
-            this.CancelButton.FlatAppearance.BorderSize = 0;
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.ForeColor = System.Drawing.Color.Black;
-            this.CancelButton.Location = new System.Drawing.Point(748, 9);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(130, 40);
-            this.CancelButton.TabIndex = 1;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = false;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CustomCancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CustomCancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CustomCancelButton.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.CustomCancelButton.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.CustomCancelButton.BorderRadius = 5;
+            this.CustomCancelButton.BorderSize = 0;
+            this.CustomCancelButton.FlatAppearance.BorderSize = 0;
+            this.CustomCancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CustomCancelButton.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CustomCancelButton.ForeColor = System.Drawing.Color.Black;
+            this.CustomCancelButton.Location = new System.Drawing.Point(748, 9);
+            this.CustomCancelButton.Name = "CancelButton";
+            this.CustomCancelButton.Size = new System.Drawing.Size(130, 40);
+            this.CustomCancelButton.TabIndex = 1;
+            this.CustomCancelButton.Text = "Cancel";
+            this.CustomCancelButton.UseVisualStyleBackColor = false;
+            this.CustomCancelButton.Click += new System.EventHandler(this.CustomCancelButton_Click);
             // 
             // panel5
             // 
@@ -228,7 +229,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CustomControls.RoundButton SaveButton;
-        private CustomControls.RoundButton CancelButton;
+        private CustomControls.RoundButton CustomCancelButton;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label SupplierDetailsHeaderLabel;
         private System.Windows.Forms.Label label6;

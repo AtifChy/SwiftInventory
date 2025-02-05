@@ -63,6 +63,26 @@ namespace SwiftInventory.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back {
+            get {
+                object obj = ResourceManager.GetObject("back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap back1 {
+            get {
+                object obj = ResourceManager.GetObject("back1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_account_94 {
             get {
                 object obj = ResourceManager.GetObject("icons8-account-94", resourceCulture);
@@ -76,6 +96,26 @@ namespace SwiftInventory.Properties {
         internal static System.Drawing.Bitmap icons8_picture_80 {
             get {
                 object obj = ResourceManager.GetObject("icons8-picture-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PROFILE {
+            get {
+                object obj = ResourceManager.GetObject("PROFILE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SECURITY {
+            get {
+                object obj = ResourceManager.GetObject("SECURITY", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

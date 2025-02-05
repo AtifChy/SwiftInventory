@@ -30,7 +30,7 @@ namespace SwiftInventory.Forms.Main.Supplier
                 {
                     SupplierDetailsHeaderLabel.Text = @"Supplier Details";
                     SaveButton.Visible = false;
-                    CancelButton.Text = @"Close";
+                    CustomCancelButton.Text = @"Close";
                     NameTextBox.ReadOnly = true;
                     AddressTextBox.ReadOnly = true;
                     PhoneTextBox.ReadOnly = true;
@@ -50,7 +50,7 @@ namespace SwiftInventory.Forms.Main.Supplier
             }
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void CustomCancelButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(Parent as Panel, new ManageSupplierForm());
         }
