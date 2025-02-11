@@ -74,6 +74,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\FormManager.cs" />
     <Compile Include="Common\Product.cs" />
     <Compile Include="Common\UserSession.cs" />
     <Compile Include="CustomControls\OrderControl.cs">
@@ -102,6 +103,12 @@
     <Compile Include="Database\PurchaseOrderQueries.cs" />
     <Compile Include="Database\SupplierQueries.cs" />
     <Compile Include="Database\UserQueries.cs" />
+    <Compile Include="Forms\Auth\AuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\AuthForm.Designer.cs">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Auth\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +291,9 @@
     <EmbeddedResource Include="CustomControls\InfoOrderControl.resx">
       <DependentUpon>InfoOrderControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\AuthForm.resx">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,10 +418,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SwiftInventoryDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SwiftInventoryDB.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\icons8-picture-80.png" />
     <None Include="Resources\Logo.png" />
     <Content Include="SwiftInventoryDB.mdf">

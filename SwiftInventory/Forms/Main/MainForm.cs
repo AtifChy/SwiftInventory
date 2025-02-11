@@ -1,5 +1,4 @@
 using SwiftInventory.Common;
-using SwiftInventory.Forms.Auth;
 using SwiftInventory.Forms.Common;
 using SwiftInventory.Forms.Main.Customer;
 using SwiftInventory.Forms.Main.Order;
@@ -141,10 +140,8 @@ namespace SwiftInventory.Forms.Main
             DialogResult result = MessageBox.Show(this, @"Are you sure you want to log out?", @"Log Out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Hide();
-                var loginForm = new LoginForm();
-                loginForm.Show();
-                loginForm.Closed += (s, args) => Close();
+                FormManager.AuthFormInstance.Show();
+                Close();
             }
         }
 
@@ -169,9 +166,10 @@ namespace SwiftInventory.Forms.Main
                 _activeButton.BackColor = Color.FromArgb(40, 39, 63);
             }
 
-            if (_activeButton != null && _activeButton.HasChildren)
+            _activeButton = button;
+
+            if (_activeButton != null)
             {
-                _activeButton = button;
                 _activeButton.BackColor = Color.FromArgb(63, 62, 101);
             }
         }
@@ -181,6 +179,14 @@ namespace SwiftInventory.Forms.Main
             HighlightButton(null);
             HeaderLabel.Text = @"Profile";
             OpenChildForm(ChildFormPanel, new ProfileForm());
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!FormManager.AuthFormInstance.Visible)
+            {
+                FormManager.AuthFormInstance.Close();
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-using SwiftInventory.Common;
+ï»¿using SwiftInventory.Common;
 using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
 using SwiftInventory.Forms.Main;
@@ -9,90 +9,121 @@ namespace SwiftInventory.Forms.Auth
 {
     public partial class LoginForm : BaseForm
     {
+        private const char PasswordChar = 'â€¢';
+
         public LoginForm()
         {
             InitializeComponent();
             EyeSlashButton.SendToBack();
-            RoleComboBox.Items.Add("Admin");
-            RoleComboBox.Items.Add("Manager");
-            RoleComboBox.Items.Add("Salesman");
+            RoleComboBox.Items.AddRange(new object[] { "Admin", "Manager", "Salesman" });
             RoleComboBox.SelectedIndex = 0;
         }
 
-        private void EyeButton_Click(object sender, System.EventArgs e)
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-            if (PasswordTextBox.PasswordChar == '•')
+            ActiveControl = HeaderLabel;
+        }
+
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(this,
+                @"Do you want to sign up?",
+                @"Sign Up",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                OpenChildForm(Parent as Panel, new SignupForm());
+            }
+        }
+
+        private void EyeButton_Click(object sender, EventArgs e)
+        {
+            if (PasswordTextBox.PasswordChar == PasswordChar)
             {
                 EyeSlashButton.BringToFront();
                 PasswordTextBox.PasswordChar = '\0';
             }
         }
 
-        private void EyeSlashButton_Click(object sender, System.EventArgs e)
+        private void EyeSlashButton_Click(object sender, EventArgs e)
         {
             if (PasswordTextBox.PasswordChar == '\0')
             {
                 EyeButton.BringToFront();
-                PasswordTextBox.PasswordChar = '•';
+                PasswordTextBox.PasswordChar = PasswordChar;
             }
         }
 
-        private void LogInButton_Click(object sender, System.EventArgs e)
+        private void LogInButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(UsernameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+            string username = UsernameTextBox.Text.Trim();
+            string password = PasswordTextBox.Text;
+            string role = RoleComboBox.SelectedItem.ToString();
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show(this,
-                    "Please fill in all fields",
-                    "Error",
+                    @"Please fill in all fields",
+                    @"Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
-            var user = UserQueries.GetUser(UsernameTextBox.Text);
-            if (user != null)
+            if (AuthUser(username, password, role))
             {
-                if (user["Password"].ToString() == PasswordTextBox.Text &&
-                    string.Equals(RoleComboBox.Text, user["Role"].ToString(), StringComparison.OrdinalIgnoreCase))
-                {
-                    if (user["Approved"].ToString() == "False")
-                    {
-                        MessageBox.Show(this,
-                            "Your account is not approved by an admin yet.",
-                            "Error",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                        return;
-                    }
+                UsernameTextBox.Clear();
+                PasswordTextBox.Clear();
+                RoleComboBox.SelectedIndex = 0;
 
-                    UserSession.UserId = (int)user["Id"];
-                    UserSession.Role = user["Role"].ToString();
-                    UserSession.UserName = user["UserName"].ToString();
-
-                    Hide();
-                    var mainForm = new MainForm();
-                    mainForm.Show();
-                    mainForm.Closed += (s, args) => Close();
-                }
-                else
-                {
-                    MessageBox.Show(this,
-                        "Invalid credentials",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                FormManager.AuthFormInstance.Hide();
             }
         }
 
-        private void SignUpButton_Click(object sender, System.EventArgs e)
+        private bool AuthUser(string username, string password, string role)
         {
-            OpenChildForm(MainPanel, new SignupForm());
-        }
+            if (username.Contains(" "))
+            {
+                MessageBox.Show(this,
+                    @"Username cannot contain spaces",
+                    @"Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return false;
+            }
 
-        private void LoginForm_Load(object sender, System.EventArgs e)
-        {
-            ActiveControl = HeaderLabel;
+            var user = UserQueries.GetUser(username);
+            if (user == null || user["Password"].ToString() != password ||
+                !string.Equals(role, user["Role"].ToString(),
+                    StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show(this,
+                    @"Invalid credentials",
+                    @"Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!(bool)user["Approved"])
+            {
+                MessageBox.Show(this,
+                    @"Your account is not approved by an admin yet.",
+                    @"Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return false;
+            }
+
+            UserSession.UserId = (int)user["Id"];
+            UserSession.Role = user["Role"].ToString();
+            UserSession.UserName = user["UserName"].ToString();
+
+            return true;
         }
     }
 }

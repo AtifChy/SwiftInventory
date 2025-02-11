@@ -96,12 +96,12 @@ namespace SwiftInventory.Forms.Auth
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            OpenChildForm(Parent as Panel, new LoginForm());
+            OpenChildForm(Parent as Panel, new AuthForm());
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            OpenChildForm(Parent as Panel, new LoginForm());
+            OpenChildForm(Parent as Panel, new AuthForm());
         }
     }
 }
