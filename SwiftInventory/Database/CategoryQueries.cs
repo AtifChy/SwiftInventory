@@ -15,6 +15,8 @@ namespace SwiftInventory.Database
                         CategoryName AS 'Category Name'
                     FROM Category";
 
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -35,6 +37,9 @@ namespace SwiftInventory.Database
                         CategoryName AS [Category Name]
                     FROM Category
                     WHERE CategoryID = @CategoryID";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CategoryID", categoryId);
@@ -54,6 +59,8 @@ namespace SwiftInventory.Database
                     INSERT INTO Category (CategoryName)
                     VALUES (@CategoryName)";
 
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CategoryName", categoryName);
@@ -70,6 +77,9 @@ namespace SwiftInventory.Database
                     UPDATE Category
                     SET CategoryName = @CategoryName
                     WHERE CategoryID = @CategoryID";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CategoryName", categoryName);
@@ -86,6 +96,9 @@ namespace SwiftInventory.Database
                 const string query = @"
                     DELETE FROM Category
                     WHERE CategoryID = @CategoryID";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CategoryID", categoryId);
@@ -100,6 +113,9 @@ namespace SwiftInventory.Database
             {
                 const string query = @"
                     SELECT COUNT(CategoryID) FROM Category";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     return (int)command.ExecuteScalar();

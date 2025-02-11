@@ -408,6 +408,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SwiftInventoryDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>SwiftInventoryDB.mdf</DependentUpon>
+    </Content>
     <None Include="Resources\icons8-picture-80.png" />
     <None Include="Resources\Logo.png" />
     <Content Include="SwiftInventoryDB.mdf">

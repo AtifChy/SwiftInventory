@@ -39,12 +39,12 @@ namespace SwiftInventory.Forms.Main.Supplier
             var id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
             if (SupplierQueries.DeleteSupplier(id))
             {
-                MessageBox.Show(@"Supplier deleted successfully.");
+                MessageBox.Show(this, @"Supplier deleted successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 SupplierDataGridView.DataSource = SupplierQueries.GetSuppliers();
             }
             else
             {
-                MessageBox.Show(@"Failed to delete supplier.");
+                MessageBox.Show(this, @"Failed to delete supplier.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

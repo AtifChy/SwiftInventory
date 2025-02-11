@@ -14,6 +14,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         PurchaseOrder.PurchaseOrderID AS ID,
@@ -40,6 +42,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         Supplier.SupplierName, PurchaseOrder.TotalAmount, PurchaseOrder.PaymentStatus
@@ -64,6 +68,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         Product.ProductID AS ID,
@@ -96,6 +102,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     UPDATE PurchaseOrder
                     SET PaymentStatus = @PaymentStatus
@@ -113,6 +121,7 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
                 const string query = @"
                     DELETE FROM PurchaseOrder
                     WHERE PurchaseOrderID = @PurchaseOrderID";
@@ -130,6 +139,7 @@ namespace SwiftInventory.Database
 
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
                 using (SqlTransaction transaction = connection.BeginTransaction())
                 {
                     try
@@ -194,6 +204,7 @@ namespace SwiftInventory.Database
                     FROM [PurchaseOrder]
                     WHERE PurchaseOrderID = @PurchaseOrderID
                     AND PaymentStatus = 'Received'";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@PurchaseOrderID", purchaseOrderId);
@@ -208,6 +219,7 @@ namespace SwiftInventory.Database
             {
                 const string query = @"
                     SELECT COUNT(PurchaseOrderID) FROM PurchaseOrder";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     return (int)command.ExecuteScalar();

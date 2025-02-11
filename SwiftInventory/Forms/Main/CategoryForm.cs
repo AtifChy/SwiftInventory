@@ -34,14 +34,14 @@ namespace SwiftInventory.Forms.Main
                     var selectedRow = CategoryDataGridView.SelectedRows[0];
                     var id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
                     CategoryQueries.UpdateCategory(id, AddCategoryText.Text);
-                    MessageBox.Show(@"Category updated successfully.");
+                    MessageBox.Show(this, @"Category updated successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _editMode = false;
                 }
                 else
                 {
                     // Add new category
                     CategoryQueries.AddCategory(AddCategoryText.Text);
-                    MessageBox.Show(@"Category added successfully.");
+                    MessageBox.Show(this, @"Category added successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 CategoryDataGridView.DataSource = CategoryQueries.GetCategories();
@@ -49,7 +49,7 @@ namespace SwiftInventory.Forms.Main
             }
             else
             {
-                MessageBox.Show(@"Category name cannot be empty.");
+                MessageBox.Show(this, @"Please enter a category name.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,7 +91,7 @@ namespace SwiftInventory.Forms.Main
             }
             else
             {
-                MessageBox.Show(@"Please select a category to edit.");
+                MessageBox.Show(this, @"Please select a category to edit.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

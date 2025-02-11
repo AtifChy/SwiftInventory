@@ -19,6 +19,9 @@ namespace SwiftInventory.Database
                         CreatedAt AS [Created At],
                         UpdatedAt AS [Updated At]       
                     FROM Customer";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -38,9 +41,12 @@ namespace SwiftInventory.Database
                         Name,
                         Email,
                         Phone,
-                        Address,
+                        Address
                     FROM Customer
                     WHERE CustomerID = @CustomerID";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CustomerID", customerId);
@@ -59,6 +65,9 @@ namespace SwiftInventory.Database
                 const string query = @"
                     INSERT INTO Customer (Name, Email, Phone, Address)
                     VALUES (@Name, @Email, @Phone, @Address)";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", name);
@@ -83,6 +92,9 @@ namespace SwiftInventory.Database
                         Address = @Address,
                         UpdatedAt = GETDATE()   
                     WHERE CustomerID = @CustomerID";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", name);
@@ -102,6 +114,9 @@ namespace SwiftInventory.Database
                 const string query = @"
                     DELETE FROM Customer
                     WHERE CustomerID = @CustomerID";
+
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@CustomerID", customerId);
@@ -116,6 +131,7 @@ namespace SwiftInventory.Database
             {
                 const string query = @"
                     SELECT COUNT(*) FROM Customer";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     return (int)command.ExecuteScalar();

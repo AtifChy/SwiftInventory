@@ -22,6 +22,8 @@ namespace SwiftInventory.Database
                     INNER JOIN Category ON Product.CategoryID = Category.CategoryID
                     INNER JOIN Supplier ON Product.SupplierID = Supplier.SupplierID";
 
+                connection.Open();
+
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -41,6 +43,7 @@ namespace SwiftInventory.Database
                         ProductName, PricePerUnit, Quantity, CategoryID, SupplierID, Image
                     FROM Product
                     WHERE ProductID = @ProductID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductID", productId);
@@ -52,7 +55,7 @@ namespace SwiftInventory.Database
                         quantity = reader.GetInt32(2);
                         categoryId = reader.GetInt32(3);
                         supplierId = reader.GetInt32(4);
-                        image = reader.GetString(5);
+                        image = reader.IsDBNull(5) ? null : reader.GetString(5);
                     }
                 }
             }
@@ -65,6 +68,7 @@ namespace SwiftInventory.Database
                 const string query = @"
                     INSERT INTO Product (ProductName, PricePerUnit, Quantity, CategoryID, SupplierID, Image)
                     VALUES (@ProductName, @PricePerUnit, @Quantity, @CategoryID, @SupplierID, @Image)";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductName", productName);
@@ -93,6 +97,7 @@ namespace SwiftInventory.Database
                         Image = @Image      
                     WHERE ProductID = @ProductID";
 
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductID", productId);
@@ -119,6 +124,8 @@ namespace SwiftInventory.Database
             {
                 List<string> updates = new List<string>();
                 string query = "UPDATE Product SET ";
+
+                connection.Open();
 
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -173,6 +180,7 @@ namespace SwiftInventory.Database
                     UPDATE Product
                     SET Quantity = Quantity + @Delta
                     WHERE ProductID = @ProductID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Delta", delta);
@@ -189,6 +197,7 @@ namespace SwiftInventory.Database
                 const string query = @"
                     DELETE FROM Product
                     WHERE ProductID = @ProductID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductID", productId);
@@ -205,6 +214,7 @@ namespace SwiftInventory.Database
                     SELECT Quantity
                     FROM Product
                     WHERE ProductID = @ProductID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ProductID", productId);
@@ -224,6 +234,7 @@ namespace SwiftInventory.Database
                 const string query = @"
                     SELECT COUNT(*)
                     FROM Product";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     return (int)command.ExecuteScalar();

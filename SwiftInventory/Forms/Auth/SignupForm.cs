@@ -88,7 +88,14 @@ namespace SwiftInventory.Forms.Auth
                     MessageBoxIcon.Error);
                 return;
             }
+
             UserQueries.AddUser(UsernameTextBox.Text, PasswordTextBox.Text, EmailTextBox.Text, RoleComboBox.Text);
+            MessageBox.Show(this,
+                "User added successfully",
+                "Success",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
             OpenChildForm(Parent as Panel, new LoginForm());
         }
 

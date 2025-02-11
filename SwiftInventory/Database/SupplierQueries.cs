@@ -9,6 +9,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         SupplierID AS ID,
@@ -31,6 +33,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         SupplierID AS ID,
@@ -54,6 +58,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     INSERT INTO Supplier (SupplierName, Phone, Address)
                     VALUES (@SupplierName, @Phone, @Address)";
@@ -73,6 +79,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     UPDATE Supplier
                     SET SupplierName = @SupplierName, Phone = @Phone, Address = @Address
@@ -93,6 +101,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     DELETE FROM Supplier
                     WHERE SupplierID = @SupplierID";
@@ -109,6 +119,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT COUNT(SupplierID) FROM Supplier";
                 using (SqlCommand command = new SqlCommand(query, connection))

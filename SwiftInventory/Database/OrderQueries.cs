@@ -25,6 +25,7 @@ namespace SwiftInventory.Database
                     FROM [Order]
                     INNER JOIN Customer ON [Order].CustomerID = Customer.CustomerID
                     INNER JOIN [User] ON [Order].UserID = [User].UserID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -45,6 +46,7 @@ namespace SwiftInventory.Database
                     FROM [Order]
                     INNER JOIN Customer ON [Order].CustomerID = Customer.CustomerID
                     WHERE [Order].OrderID = @OrderID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@OrderID", orderId);
@@ -73,6 +75,7 @@ namespace SwiftInventory.Database
                     FROM OrderDetails
                     INNER JOIN Product ON OrderDetails.ProductID = Product.ProductID
                     WHERE OrderDetails.OrderID = @OrderID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@OrderID", orderId);
@@ -97,6 +100,7 @@ namespace SwiftInventory.Database
 
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
                 using (SqlTransaction transaction = connection.BeginTransaction())
                 {
                     try
@@ -158,6 +162,7 @@ namespace SwiftInventory.Database
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
                 const string query = "UPDATE [Order] SET PaymentStatus = @PaymentStatus WHERE OrderID = @OrderID";
+                connection.Open();
                 try
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -180,6 +185,7 @@ namespace SwiftInventory.Database
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
                 const string query = "DELETE FROM [Order] WHERE OrderID = @OrderID";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@OrderID", orderId);
@@ -197,6 +203,7 @@ namespace SwiftInventory.Database
                     FROM [Order]
                     WHERE OrderID = @OrderID
                     AND PaymentStatus = 'Paid'";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@OrderID", orderId);
@@ -210,6 +217,7 @@ namespace SwiftInventory.Database
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
                 const string query = "SELECT COUNT(OrderID) FROM [Order]";
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     return (int)command.ExecuteScalar();

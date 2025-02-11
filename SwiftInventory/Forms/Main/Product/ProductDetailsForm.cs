@@ -7,12 +7,12 @@ namespace SwiftInventory.Forms.Main.Product
     public partial class ProductDetailsForm : BaseForm
     {
         private readonly int? _productId;
-        private string _productName;
-        private decimal _pricePerUnit;
-        private int _quantity;
-        private int _categoryId;
-        private int _supplierId;
-        private string _image;
+        private readonly string _productName;
+        private readonly decimal _pricePerUnit;
+        private readonly int _quantity;
+        private readonly int _categoryId;
+        private readonly int _supplierId;
+        private readonly string _image;
 
         public ProductDetailsForm()
         {
@@ -99,13 +99,13 @@ namespace SwiftInventory.Forms.Main.Product
             {
                 ProductQueries.AddProduct(productName, decimal.Parse(pricePerUnit), int.Parse(quantity), categoryId,
                     supplierId, image);
-                MessageBox.Show(@"Product added successfully.");
+                MessageBox.Show(this, @"Product added successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OpenChildForm(Parent as Panel, new ManageProductForm());
             }
             else
             {
                 ProductQueries.UpdateProduct(_productId.Value, productName, decimal.Parse(pricePerUnit), int.Parse(quantity), categoryId, supplierId, image);
-                MessageBox.Show(@"Product updated successfully.");
+                MessageBox.Show(this, @"Product updated successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 OpenChildForm(Parent as Panel, new ManageProductForm());
             }
         }

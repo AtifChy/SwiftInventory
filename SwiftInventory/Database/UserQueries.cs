@@ -10,6 +10,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         UserID AS ID,     
@@ -32,6 +34,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         UserID AS ID,     
@@ -56,6 +60,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT 
                         UserID AS ID,     
@@ -81,6 +87,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     UPDATE [User]
                     SET Approved = 1
@@ -97,6 +105,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     INSERT INTO [User] (UserName, Password, Email, Role)
                     VALUES (@UserName, @Password, @Email, @Role)";
@@ -115,6 +125,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     DELETE FROM [User]
                     WHERE UserID = @UserID";
@@ -136,6 +148,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 List<string> updates = new List<string>();
                 string query = "UPDATE [User] SET ";
 
@@ -192,6 +206,8 @@ namespace SwiftInventory.Database
         {
             using (SqlConnection connection = DatabaseConfig.GetConnection())
             {
+                connection.Open();
+
                 const string query = @"
                     SELECT COUNT(*)
                     FROM [User]";

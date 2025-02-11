@@ -18,9 +18,7 @@ namespace SwiftInventory.Database
         {
             try
             {
-                var connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                return connection;
+                return new SqlConnection(ConnectionString);
             }
             catch (Exception ex)
             {
@@ -35,6 +33,7 @@ namespace SwiftInventory.Database
             {
                 using (var connection = GetConnection())
                 {
+                    connection.Open();
                     if (connection.State == System.Data.ConnectionState.Open)
                     {
                         connection.Close();

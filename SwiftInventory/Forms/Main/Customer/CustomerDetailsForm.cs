@@ -68,8 +68,18 @@ namespace SwiftInventory.Forms.Main.Customer
                 return;
             }
 
-            CustomerQueries.AddCustomer(name, email, phone, address);
-            MessageBox.Show(@"Customer added successfully", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (_customerId.HasValue && _editable)
+            {
+                CustomerQueries.UpdateCustomer(_customerId.Value, name, email, phone, address);
+                MessageBox.Show(@"Customer updated successfully", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                CustomerQueries.AddCustomer(name, email, phone, address);
+                MessageBox.Show(@"Customer added successfully", @"Success", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
             OpenChildForm(Parent as Panel, new ManageCustomerForm());
         }
     }
