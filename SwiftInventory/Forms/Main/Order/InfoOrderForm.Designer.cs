@@ -32,6 +32,8 @@
             this.ManageSupplierLabel = new System.Windows.Forms.Label();
             this.OrderFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PaymentStatusText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TotalAmountText = new System.Windows.Forms.TextBox();
             this.totalLabel = new System.Windows.Forms.Label();
             this.CustomerNameText = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.FirstInfoViewControl = new SwiftInventory.CustomControls.InfoOrderControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CloseButton = new SwiftInventory.CustomControls.RoundButton();
-            this.PaymentStatusText = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.OrderFlowLayoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -96,6 +96,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(606, 72);
             this.panel1.TabIndex = 1;
+            // 
+            // PaymentStatusText
+            // 
+            this.PaymentStatusText.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
+            this.PaymentStatusText.Location = new System.Drawing.Point(478, 35);
+            this.PaymentStatusText.Name = "PaymentStatusText";
+            this.PaymentStatusText.ReadOnly = true;
+            this.PaymentStatusText.Size = new System.Drawing.Size(125, 34);
+            this.PaymentStatusText.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(474, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 22);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Payment Status";
             // 
             // TotalAmountText
             // 
@@ -181,25 +200,6 @@
             this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // PaymentStatusText
-            // 
-            this.PaymentStatusText.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.PaymentStatusText.Location = new System.Drawing.Point(478, 35);
-            this.PaymentStatusText.Name = "PaymentStatusText";
-            this.PaymentStatusText.ReadOnly = true;
-            this.PaymentStatusText.Size = new System.Drawing.Size(125, 34);
-            this.PaymentStatusText.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(474, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 22);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Payment Status";
-            // 
             // InfoOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -212,6 +212,7 @@
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InfoOrderForm";
             this.Text = "ViewOrderForm";

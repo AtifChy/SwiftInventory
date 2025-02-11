@@ -1,5 +1,4 @@
-﻿using SwiftInventory.Common;
-using SwiftInventory.CustomControls;
+﻿using SwiftInventory.CustomControls;
 using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
 using System;
@@ -46,14 +45,13 @@ namespace SwiftInventory.Forms.Main.Order
 
             for (int i = 1; i < _orderProducts.Count; i++)
             {
-                var orderControl = new InfoOrderControl
-                {
-                    ProductPictureBox = { ImageLocation = _orderProducts[i].ProductImage },
-                    ProductNameText = { Text = _orderProducts[i].ProductName },
-                    QuantityNumericUpDown = { Value = _orderProducts[i].Quantity },
-                    SubtotalTextBox = { Text = _orderProducts[i].Subtotal.ToString() }
-                };
-                OrderFlowLayoutPanel.Controls.Add(orderControl);
+                var infoOrderControl = new InfoOrderControl();
+                infoOrderControl.ProductPictureBox.ImageLocation = _orderProducts[i].ProductImage;
+                infoOrderControl.ProductNameText.Text = _orderProducts[i].ProductName;
+                infoOrderControl.QuantityNumericUpDown.Value = _orderProducts[i].Quantity;
+                infoOrderControl.SubtotalTextBox.Text = _orderProducts[i].Subtotal.ToString();
+
+                OrderFlowLayoutPanel.Controls.Add(infoOrderControl);
             }
         }
 
@@ -66,8 +64,7 @@ namespace SwiftInventory.Forms.Main.Order
 
                 // Calculate the left (and right) margin needed to center the control.
                 int horizontalMargin = (OrderFlowLayoutPanel.ClientSize.Width - ctrl.Width) / 2;
-                if (horizontalMargin < 0)
-                    horizontalMargin = 0;
+                horizontalMargin = Math.Max(horizontalMargin, 0);
 
                 // Update the control's margin. (You can preserve its existing top and bottom margins.)
                 ctrl.Margin = new Padding(horizontalMargin, ctrl.Margin.Top, horizontalMargin, ctrl.Margin.Bottom);

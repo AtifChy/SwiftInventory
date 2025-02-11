@@ -61,38 +61,52 @@ namespace SwiftInventory.Forms.Auth
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(UsernameTextBox.Text) || string.IsNullOrWhiteSpace(PasswordTextBox.Text) || string.IsNullOrWhiteSpace(ConfirmPasswordTextBox.Text))
+            string username = UsernameTextBox.Text.Trim();
+
+            if (username.Contains(" "))
             {
                 MessageBox.Show(this,
-                    "Please fill in all fields",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
-            if (PasswordTextBox.Text != ConfirmPasswordTextBox.Text)
-            {
-                MessageBox.Show(this,
-                    "Passwords do not match",
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
-            if (UserQueries.GetUser(UsernameTextBox.Text) != null)
-            {
-                MessageBox.Show(this,
-                    "Username already exists",
-                    "Error",
+                    @"Username cannot contain spaces",
+                    @"Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
 
-            UserQueries.AddUser(UsernameTextBox.Text, PasswordTextBox.Text, EmailTextBox.Text, RoleComboBox.Text);
+            if (string.IsNullOrEmpty(username) || string.IsNullOrWhiteSpace(PasswordTextBox.Text) || string.IsNullOrWhiteSpace(ConfirmPasswordTextBox.Text))
+            {
+                MessageBox.Show(this,
+                    @"Please fill in all fields",
+                    @"Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if (PasswordTextBox.Text != ConfirmPasswordTextBox.Text)
+            {
+                MessageBox.Show(this,
+                    @"Passwords do not match",
+                    @"Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            if (UserQueries.GetUser(username) != null)
+            {
+                MessageBox.Show(this,
+                    @"Username already exists",
+                    @"Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            UserQueries.AddUser(username, PasswordTextBox.Text, EmailTextBox.Text, RoleComboBox.Text);
             MessageBox.Show(this,
-                "User added successfully",
-                "Success",
+                @"User added successfully",
+                @"Success",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 

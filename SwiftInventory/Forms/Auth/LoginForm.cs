@@ -78,9 +78,8 @@ namespace SwiftInventory.Forms.Auth
                 PasswordTextBox.Clear();
                 RoleComboBox.SelectedIndex = 0;
 
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
                 FormManager.AuthFormInstance.Hide();
+                new MainForm().Show();
             }
         }
 
@@ -98,8 +97,7 @@ namespace SwiftInventory.Forms.Auth
 
             var user = UserQueries.GetUser(username);
             if (user == null || user["Password"].ToString() != password ||
-                !string.Equals(role, user["Role"].ToString(),
-                    StringComparison.OrdinalIgnoreCase))
+                !string.Equals(role, user["Role"].ToString(), StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show(this,
                     @"Invalid credentials",

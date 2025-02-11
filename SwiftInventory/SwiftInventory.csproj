@@ -77,6 +77,9 @@
     <Compile Include="Common\FormManager.cs" />
     <Compile Include="Common\Product.cs" />
     <Compile Include="Common\UserSession.cs" />
+    <Compile Include="CustomControls\CenterFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CustomControls\OrderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
