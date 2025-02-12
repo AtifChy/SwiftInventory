@@ -10,14 +10,12 @@ namespace SwiftInventory.Forms.Main.User
         public ProfileForm()
         {
             InitializeComponent();
-
-            RoleComboBox.Items.Add("Admin");
-            RoleComboBox.Items.Add("Manager");
-            RoleComboBox.Items.Add("Salesman");
         }
 
         private void ProfileForm_Load(object sender, System.EventArgs e)
         {
+            RoleComboBox.DataSource = new[] { "Admin", "Manager", "Salesman" };
+
             var user = UserQueries.GetUser(UserSession.UserName);
             UsernameTextBox.Text = user["Username"].ToString();
             EmailTextBox.Text = user["Email"].ToString();
@@ -28,12 +26,28 @@ namespace SwiftInventory.Forms.Main.User
         {
             if (PasswordTextBox.Text == ConfirmPasswordTextBox.Text)
             {
-                UserQueries.UpdateUser(UserSession.UserId, userName: UsernameTextBox.Text, email: EmailTextBox.Text, password: PasswordTextBox.Text, role: RoleComboBox.Text);
-                MessageBox.Show(this, "Profile updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bool approved = RoleComboBox.Text == UserSession.Role;
+
+                if (!approved)
+                {
+                    var result = MessageBox.Show(
+                        this,
+                        "You are changing the role. Are you sure you want to continue?\nNOTE: You will need admin approval for next login.",
+                        @"Change Role",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+                }
+
+                UserQueries.UpdateUser(UserSession.UserId, userName: UsernameTextBox.Text, email: EmailTextBox.Text, password: PasswordTextBox.Text, role: RoleComboBox.Text, approved: approved);
+                MessageBox.Show(this, @"Profile updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show(this, "Passwords do not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, @"Passwords do not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

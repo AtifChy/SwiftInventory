@@ -31,6 +31,7 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.UploadImageButton = new SwiftInventory.CustomControls.RoundButton();
+            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SupplierComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,12 +49,11 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.ProductDetailsHeaderLabel = new System.Windows.Forms.Label();
             this.ProductImageFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
             this.MainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -107,6 +107,17 @@
             this.UploadImageButton.Text = "Upload";
             this.UploadImageButton.UseVisualStyleBackColor = false;
             this.UploadImageButton.Click += new System.EventHandler(this.UploadImageButton_Click);
+            // 
+            // ProductPictureBox
+            // 
+            this.ProductPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ProductPictureBox.Image = global::SwiftInventory.Properties.Resources.icons8_picture_80;
+            this.ProductPictureBox.Location = new System.Drawing.Point(172, 309);
+            this.ProductPictureBox.Name = "ProductPictureBox";
+            this.ProductPictureBox.Size = new System.Drawing.Size(130, 134);
+            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPictureBox.TabIndex = 11;
+            this.ProductPictureBox.TabStop = false;
             // 
             // label4
             // 
@@ -303,17 +314,6 @@
             // 
             this.ProductImageFileDialog.FileName = "ProductImage";
             // 
-            // ProductPictureBox
-            // 
-            this.ProductPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ProductPictureBox.Image = global::SwiftInventory.Properties.Resources.icons8_picture_80;
-            this.ProductPictureBox.Location = new System.Drawing.Point(172, 309);
-            this.ProductPictureBox.Name = "ProductPictureBox";
-            this.ProductPictureBox.Size = new System.Drawing.Size(130, 134);
-            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProductPictureBox.TabIndex = 11;
-            this.ProductPictureBox.TabStop = false;
-            // 
             // ProductDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -324,16 +324,17 @@
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 7.8F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "ProductDetailsForm";
-            this.Text = "AddProduct";
+            this.Text = "AddProduct - SwiftInventory";
             this.Load += new System.EventHandler(this.ProductDetailsForm_Load);
             this.MainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

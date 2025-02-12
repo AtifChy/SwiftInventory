@@ -1,6 +1,6 @@
 ﻿namespace SwiftInventory.CustomControls
 {
-    partial class InfoOrderControl
+    partial class ProductItemControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.quantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.QuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this._productNameText = new System.Windows.Forms.TextBox();
-            this.productPicture = new System.Windows.Forms.PictureBox();
-            this._subtotalTextBox = new System.Windows.Forms.TextBox();
+            this.ProductNameText = new System.Windows.Forms.TextBox();
+            this.ProductPictureBox = new System.Windows.Forms.PictureBox();
+            this.SubtotalTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // quantityNumericUpDown
             // 
-            this.quantityNumericUpDown.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this.quantityNumericUpDown.Location = new System.Drawing.Point(243, 100);
-            this.quantityNumericUpDown.Name = "quantityNumericUpDown";
-            this.quantityNumericUpDown.ReadOnly = true;
-            this.quantityNumericUpDown.Size = new System.Drawing.Size(146, 34);
-            this.quantityNumericUpDown.TabIndex = 19;
+            this.QuantityNumericUpDown.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
+            this.QuantityNumericUpDown.Location = new System.Drawing.Point(243, 100);
+            this.QuantityNumericUpDown.Name = "QuantityNumericUpDown";
+            this.QuantityNumericUpDown.ReadOnly = true;
+            this.QuantityNumericUpDown.Size = new System.Drawing.Size(146, 34);
+            this.QuantityNumericUpDown.TabIndex = 19;
             // 
             // label2
             // 
@@ -70,31 +70,31 @@
             // 
             // _productNameText
             // 
-            this._productNameText.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this._productNameText.Location = new System.Drawing.Point(243, 32);
-            this._productNameText.Name = "_productNameText";
-            this._productNameText.ReadOnly = true;
-            this._productNameText.Size = new System.Drawing.Size(340, 34);
-            this._productNameText.TabIndex = 21;
+            this.ProductNameText.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
+            this.ProductNameText.Location = new System.Drawing.Point(243, 32);
+            this.ProductNameText.Name = "ProductNameText";
+            this.ProductNameText.ReadOnly = true;
+            this.ProductNameText.Size = new System.Drawing.Size(340, 34);
+            this.ProductNameText.TabIndex = 21;
             // 
             // productPicture
             // 
-            this.productPicture.Image = global::SwiftInventory.Properties.Resources.icons8_picture_80;
-            this.productPicture.Location = new System.Drawing.Point(3, 3);
-            this.productPicture.Name = "productPicture";
-            this.productPicture.Size = new System.Drawing.Size(125, 136);
-            this.productPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.productPicture.TabIndex = 0;
-            this.productPicture.TabStop = false;
+            this.ProductPictureBox.Image = global::SwiftInventory.Properties.Resources.icons8_picture_80;
+            this.ProductPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.ProductPictureBox.Name = "ProductPictureBox";
+            this.ProductPictureBox.Size = new System.Drawing.Size(125, 136);
+            this.ProductPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProductPictureBox.TabIndex = 0;
+            this.ProductPictureBox.TabStop = false;
             // 
             // _subtotalTextBox
             // 
-            this._subtotalTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
-            this._subtotalTextBox.Location = new System.Drawing.Point(412, 100);
-            this._subtotalTextBox.Name = "_subtotalTextBox";
-            this._subtotalTextBox.ReadOnly = true;
-            this._subtotalTextBox.Size = new System.Drawing.Size(171, 34);
-            this._subtotalTextBox.TabIndex = 20;
+            this.SubtotalTextBox.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold);
+            this.SubtotalTextBox.Location = new System.Drawing.Point(412, 100);
+            this.SubtotalTextBox.Name = "SubtotalTextBox";
+            this.SubtotalTextBox.ReadOnly = true;
+            this.SubtotalTextBox.Size = new System.Drawing.Size(171, 34);
+            this.SubtotalTextBox.TabIndex = 20;
             // 
             // label3
             // 
@@ -113,16 +113,16 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.label3);
-            this.Controls.Add(this._productNameText);
-            this.Controls.Add(this._subtotalTextBox);
-            this.Controls.Add(this.quantityNumericUpDown);
+            this.Controls.Add(this.ProductNameText);
+            this.Controls.Add(this.SubtotalTextBox);
+            this.Controls.Add(this.QuantityNumericUpDown);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.productPicture);
+            this.Controls.Add(this.ProductPictureBox);
             this.Name = "InfoOrderControl";
             this.Size = new System.Drawing.Size(586, 142);
-            ((System.ComponentModel.ISupportInitialize)(this.quantityNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,12 +130,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox productPicture;
-        private System.Windows.Forms.NumericUpDown quantityNumericUpDown;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox _productNameText;
-        private System.Windows.Forms.TextBox _subtotalTextBox;
         private System.Windows.Forms.Label label3;
     }
 }

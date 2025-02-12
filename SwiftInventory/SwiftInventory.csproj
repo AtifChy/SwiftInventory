@@ -92,11 +92,11 @@
     <Compile Include="CustomControls\RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomControls\InfoOrderControl.cs">
+    <Compile Include="CustomControls\ProductItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\InfoOrderControl.Designer.cs">
-      <DependentUpon>InfoOrderControl.cs</DependentUpon>
+    <Compile Include="CustomControls\ProductItemControl.Designer.cs">
+      <DependentUpon>ProductItemControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\CategoryQueries.cs" />
     <Compile Include="Database\CustomerQueries.cs" />
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="CustomControls\OrderControl.resx">
       <DependentUpon>OrderControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\InfoOrderControl.resx">
-      <DependentUpon>InfoOrderControl.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\ProductItemControl.resx">
+      <DependentUpon>ProductItemControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>

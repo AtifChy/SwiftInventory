@@ -31,15 +31,15 @@ namespace SwiftInventory.Forms.Auth
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.LogoPanel = new System.Windows.Forms.Panel();
             this.HeaderLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
-            this.MainPanel.SuspendLayout();
             this.LogoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,15 +51,6 @@ namespace SwiftInventory.Forms.Auth
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1035, 747);
             this.panel1.TabIndex = 0;
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.Controls.Add(this.iconButton1);
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MainPanel.Location = new System.Drawing.Point(496, 0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(539, 747);
-            this.MainPanel.TabIndex = 0;
             // 
             // LogoPanel
             // 
@@ -95,6 +86,15 @@ namespace SwiftInventory.Forms.Auth
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // MainPanel
+            // 
+            this.MainPanel.Controls.Add(this.iconButton1);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MainPanel.Location = new System.Drawing.Point(496, 0);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(539, 747);
+            this.MainPanel.TabIndex = 0;
+            // 
             // iconButton1
             // 
             this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,14 +120,15 @@ namespace SwiftInventory.Forms.Auth
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "AuthForm";
-            this.Text = "AuthForm";
+            this.Text = "Welcome - SwiftInventory";
             this.Load += new System.EventHandler(this.AuthForm_Load);
             this.panel1.ResumeLayout(false);
-            this.MainPanel.ResumeLayout(false);
             this.LogoPanel.ResumeLayout(false);
             this.LogoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

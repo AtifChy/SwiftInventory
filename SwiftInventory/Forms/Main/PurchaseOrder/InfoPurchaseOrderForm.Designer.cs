@@ -38,7 +38,7 @@
             this.totalLabel = new System.Windows.Forms.Label();
             this.SupplierNameText = new System.Windows.Forms.TextBox();
             this.SupplierNameLabel = new System.Windows.Forms.Label();
-            this.FirstInfoViewControl = new SwiftInventory.CustomControls.InfoOrderControl();
+            this.FirstInfoViewControl = new SwiftInventory.CustomControls.ProductItemControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.CloseButton = new SwiftInventory.CustomControls.RoundButton();
             this.panel5.SuspendLayout();
@@ -237,7 +237,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CustomControls.RoundButton CloseButton;
         private System.Windows.Forms.TextBox SupplierNameText;
-        private CustomControls.InfoOrderControl FirstInfoViewControl;
+        private CustomControls.ProductItemControl FirstInfoViewControl;
         private System.Windows.Forms.TextBox TotalAmountText;
         private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.TextBox PaymentStatusText;

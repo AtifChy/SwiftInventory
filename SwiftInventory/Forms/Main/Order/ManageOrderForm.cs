@@ -43,7 +43,12 @@ namespace SwiftInventory.Forms.Main.Order
 
                 if (OrderQueries.IsOrderPaymentStatusPaid(orderId))
                 {
-                    MessageBox.Show("Payment completed. Can't be deleted.");
+                    MessageBox.Show(
+                        this,
+                        "Payment completed. Can't be deleted.",
+                        "Delete Order",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                     return;
                 }
 

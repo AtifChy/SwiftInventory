@@ -45,7 +45,7 @@ namespace SwiftInventory.Forms.Main.PurchaseOrder
 
             for (int i = 1; i < _purchaseOrderProducts.Count; i++)
             {
-                var orderControl = new InfoOrderControl
+                var orderControl = new ProductItemControl
                 {
                     ProductPictureBox = { ImageLocation = _purchaseOrderProducts[i].ProductImage },
                     ProductNameText = { Text = _purchaseOrderProducts[i].ProductName },
