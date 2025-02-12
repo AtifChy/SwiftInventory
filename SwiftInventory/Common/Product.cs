@@ -1,6 +1,6 @@
 ﻿namespace SwiftInventory.Common
 {
-    internal class Product
+    public class Product
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }

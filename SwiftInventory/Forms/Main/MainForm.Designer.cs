@@ -469,8 +469,9 @@ namespace SwiftInventory.Forms.Main
             this.ClientSize = new System.Drawing.Size(1182, 833);
             this.Controls.Add(this.MainTable);
             this.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "MainForm";
-            this.Text = "Admin Form";
+            this.Text = "Main - SwiftInventory";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.MainTable.ResumeLayout(false);

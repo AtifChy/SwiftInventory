@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -19,6 +20,21 @@ namespace SwiftInventory.Forms.Common
             InitializeComponent();
             UpdateTheme();
             SystemEvents.UserPreferenceChanged += SystemEvents_UserPreferenceChanged;
+        }
+
+        public override string Text
+        {
+            get => base.Text;
+            set
+            {
+                string projectName = GetProjectName();
+                base.Text = !value.EndsWith($@" - {projectName}") ? $@"{value} - {projectName}" : value;
+            }
+        }
+
+        private static string GetProjectName()
+        {
+            return Assembly.GetExecutingAssembly().GetName().Name;
         }
 
         protected void OpenChildForm(Panel panelContainer, Form childForm)

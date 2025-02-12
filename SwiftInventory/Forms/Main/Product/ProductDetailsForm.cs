@@ -1,5 +1,6 @@
 ﻿using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main.Product
@@ -28,6 +29,9 @@ namespace SwiftInventory.Forms.Main.Product
 
         private void ProductDetailsForm_Load(object sender, System.EventArgs e)
         {
+            PopulateCategoryComboBox();
+            PopulateSupplierComboBox();
+
             if (_productId.HasValue)
             {
                 ProductDetailsHeaderLabel.Text = @"Edit Product";
@@ -36,7 +40,7 @@ namespace SwiftInventory.Forms.Main.Product
                 CategoryComboBox.SelectedValue = _categoryId;
                 SupplierComboBox.SelectedValue = _supplierId;
                 QuantityTextBox.Text = _quantity.ToString();
-                PriceTextBox.Text = _pricePerUnit.ToString();
+                PriceTextBox.Text = _pricePerUnit.ToString(CultureInfo.CurrentCulture);
                 ProductPictureBox.ImageLocation = _image;
             }
             else
@@ -44,8 +48,6 @@ namespace SwiftInventory.Forms.Main.Product
                 ProductDetailsHeaderLabel.Text = @"Add Product";
                 SaveButton.Text = @"Save";
             }
-            PopulateCategoryComboBox();
-            PopulateSupplierComboBox();
         }
 
         private void PopulateCategoryComboBox()

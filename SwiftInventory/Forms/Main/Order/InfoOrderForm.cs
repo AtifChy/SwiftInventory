@@ -3,6 +3,7 @@ using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main.Order
@@ -14,7 +15,6 @@ namespace SwiftInventory.Forms.Main.Order
         private readonly string _paymentStatus;
         private readonly List<SwiftInventory.Common.Product> _orderProducts;
 
-
         public InfoOrderForm(int orderId)
         {
             InitializeComponent();
@@ -24,35 +24,30 @@ namespace SwiftInventory.Forms.Main.Order
 
         private void InfoOrderForm_Load(object sender, EventArgs e)
         {
-            CustomerNameText.Text = _customerName;
-            TotalAmountText.Text = _totalAmount.ToString();
-            PaymentStatusText.Text = _paymentStatus;
-
-            try
+            if (_orderProducts == null || _orderProducts.Count == 0)
             {
-                FirstInfoViewControl.ProductPictureBox.ImageLocation = _orderProducts[0].ProductImage;
-                FirstInfoViewControl.ProductNameText.Text = _orderProducts[0].ProductName;
-                FirstInfoViewControl.QuantityNumericUpDown.Value = _orderProducts[0].Quantity;
-                FirstInfoViewControl.SubtotalTextBox.Text = _orderProducts[0].Subtotal.ToString();
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                string message = $"No products found in this order.\nError: {ex.Message}";
-                MessageBox.Show(this, message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, @"No products found in this order.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 OpenChildForm(Parent as Panel, new ManageOrderForm());
                 return;
             }
 
-            for (int i = 1; i < _orderProducts.Count; i++)
-            {
-                var infoOrderControl = new InfoOrderControl();
-                infoOrderControl.ProductPictureBox.ImageLocation = _orderProducts[i].ProductImage;
-                infoOrderControl.ProductNameText.Text = _orderProducts[i].ProductName;
-                infoOrderControl.QuantityNumericUpDown.Value = _orderProducts[i].Quantity;
-                infoOrderControl.SubtotalTextBox.Text = _orderProducts[i].Subtotal.ToString();
+            CustomerNameText.Text = _customerName;
+            TotalAmountText.Text = _totalAmount.ToString(CultureInfo.CurrentCulture);
+            PaymentStatusText.Text = _paymentStatus;
 
+            FirstInfoViewControl.SetProductItemData(_orderProducts[0]);
+
+            for (var i = 1; i < _orderProducts.Count; i++)
+            {
+                var infoOrderControl = new ProductItemControl();
+                infoOrderControl.SetProductItemData(_orderProducts[i]);
                 OrderFlowLayoutPanel.Controls.Add(infoOrderControl);
             }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(Parent as Panel, new ManageOrderForm());
         }
 
         private void OrderFlowLayoutPanel_SizeChanged(object sender, EventArgs e)
@@ -69,11 +64,6 @@ namespace SwiftInventory.Forms.Main.Order
                 // Update the control's margin. (You can preserve its existing top and bottom margins.)
                 ctrl.Margin = new Padding(horizontalMargin, ctrl.Margin.Top, horizontalMargin, ctrl.Margin.Bottom);
             }
-        }
-
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(Parent as Panel, new ManageOrderForm());
         }
     }
 }

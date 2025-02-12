@@ -15,7 +15,7 @@ namespace SwiftInventory.Forms.Auth
         {
             InitializeComponent();
             EyeSlashButton.SendToBack();
-            RoleComboBox.Items.AddRange(new object[] { "Admin", "Manager", "Salesman" });
+            RoleComboBox.DataSource = new[] { "Admin", "Manager", "Salesman" };
             RoleComboBox.SelectedIndex = 0;
         }
 

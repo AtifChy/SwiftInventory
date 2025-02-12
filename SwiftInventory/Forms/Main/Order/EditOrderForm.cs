@@ -3,6 +3,7 @@ using SwiftInventory.Database;
 using SwiftInventory.Forms.Common;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SwiftInventory.Forms.Main.Order
@@ -25,36 +26,39 @@ namespace SwiftInventory.Forms.Main.Order
 
         private void EditOrderForm_Load(object sender, System.EventArgs e)
         {
-            CustomerNameText.Text = _customerName;
-            TotalAmountText.Text = _totalAmount.ToString();
-            PaymentStatusComboBox.DataSource = new[] { "Pending", "Paid" };
-            PaymentStatusComboBox.SelectedItem = _paymentStatus;
-
-            try
+            if (_orderProducts == null || _orderProducts.Count == 0)
             {
-                FirstInfoViewControl.ProductPictureBox.ImageLocation = _orderProducts[0].ProductImage;
-                FirstInfoViewControl.ProductNameText.Text = _orderProducts[0].ProductName;
-                FirstInfoViewControl.QuantityNumericUpDown.Value = _orderProducts[0].Quantity;
-                FirstInfoViewControl.SubtotalTextBox.Text = _orderProducts[0].Subtotal.ToString();
-            }
-            catch (ArgumentOutOfRangeException ex)
-            {
-                string message = $"No products found in this order.\nError: {ex.Message}";
-                MessageBox.Show(this, message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(this, @"No products found in this order.", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 OpenChildForm(Parent as Panel, new ManageOrderForm());
                 return;
             }
 
+            CustomerNameText.Text = _customerName;
+            TotalAmountText.Text = _totalAmount.ToString(CultureInfo.CurrentCulture);
+            PaymentStatusComboBox.DataSource = new[] { "Pending", "Paid" };
+            PaymentStatusComboBox.SelectedItem = _paymentStatus;
+
+            FirstInfoViewControl.SetProductItemData(_orderProducts[0]);
+
             for (int i = 1; i < _orderProducts.Count; i++)
             {
-                var orderControl = new InfoOrderControl
-                {
-                    ProductPictureBox = { ImageLocation = _orderProducts[i].ProductImage },
-                    ProductNameText = { Text = _orderProducts[i].ProductName },
-                    QuantityNumericUpDown = { Value = _orderProducts[i].Quantity },
-                    SubtotalTextBox = { Text = _orderProducts[i].Subtotal.ToString() }
-                };
+                var orderControl = new ProductItemControl();
+                orderControl.SetProductItemData(_orderProducts[i]);
                 OrderFlowLayoutPanel.Controls.Add(orderControl);
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            string paymentStatus = PaymentStatusComboBox.SelectedItem.ToString();
+            try
+            {
+                OrderQueries.UpdateOrder(_orderId, paymentStatus);
+                MessageBox.Show(this, @"Order updated successfully.", @"Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -78,12 +82,6 @@ namespace SwiftInventory.Forms.Main.Order
                 // Update the control's margin. (You can preserve its existing top and bottom margins.)
                 ctrl.Margin = new Padding(horizontalMargin, ctrl.Margin.Top, horizontalMargin, ctrl.Margin.Bottom);
             }
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            string paymentStatus = PaymentStatusComboBox.SelectedItem.ToString();
-            OrderQueries.UpdateOrder(_orderId, paymentStatus);
         }
     }
 }
